@@ -9,9 +9,7 @@ Private:
   
   vector of integer Assignment grades
   
-  integer Project 211 grade
-  
-  integer project 212 grade
+  vector integer Project grades
   
   integer Final Exam
   
@@ -24,5 +22,14 @@ Private:
   
  Public:
  
- void getGrade(int *grade);
+//pushback the value given into the vector of Lab grades
 
+ int getLabGrade(int gradeValue)
+
+//pushback the value given into the vector of Assignment grades
+
+int getAssignmentGrade(int gradeValue)
+
+//pushback the value given into the vector of project grades
+
+int getProjectGrade(int gradeValue)
