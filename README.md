@@ -1,47 +1,46 @@
-Grade.H
-
-// get all grades 
+Class Grade {
 
 Private:
+  std::vector <double> labGrades;
+  std::vector <double> assingmentGrades;
+  std::vector <double> projectGrades;
+  double examGrade;
 
-  vector of integer Lab grades
-  
-  vector of integer Assignment grades
-  
-  vector integer Project grades
-  
-  integer Final Exam
-  
-  double totLab
-  
-  double totAssignment
-  
-  double totGrade
-  
-  
- Public:
- 
-//pushback the value given into the vector of Lab grades
- int getLabGrade(int gradeValue)
+  double totLab;
 
-//pushback the value given into the vector of Assignment grades
-int getAssignmentGrade(int gradeValue)
+  double totAssignment;
 
-//pushback the value given into the vector of project grades
-int getProjectGrade(int gradeValue)
+  double totGrade;
 
-//sets the value of private Final exam
-int getFinalExamGrade(int gradeValue)
+Public:
 
-//uses private vector to get total lab grades using vec.size()
-double setTotLab()
+  //pushback the value given into the vector of Lab grades
 
-//uses private vector to get total Assignment grades using vec.size()
-double setTotAssignment()
+  int getLabGrade(int gradeValue);
 
-//uses private totlab and totAssignment along with vector for project grades
-double totGrade()
+  //pushback the value given into the vector of Assignment grades
 
+  int getAssignmentGrade(int gradeValue);
+
+  //pushback the value given into the vector of project grades
+
+  int getProjectGrade(int gradeValue);
+
+  //sets the value of private Final exam
+
+  int getFinalExamGrade(int gradeValue);
+
+  //uses private vector to get total lab grades using vec.size()
+
+  double setTotLab();
+
+  //uses private vector to get total Assignment grades using vec.size()
+
+  double setTotAssignment();
+
+  //uses private totlab and totAssignment along with vector for project grades
+
+  double totGrade();
 };
 
 Grade.cpp
