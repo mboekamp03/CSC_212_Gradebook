@@ -3,8 +3,8 @@
 
 //pushback the value given into the vector of Lab grades 
 int Grade::getLabGrade(int gradeValue){ 
-  takes the grade value uses it to do labGrades.pushback(gradeValue)
-}//
+  //takes the grade value uses it to do labGrades.pushback(gradeValue)
+}
 
 //pushback the value given into the vector of Assignment grades 
 int Grade::getAssignmentGrade(int gradeValue){ 
