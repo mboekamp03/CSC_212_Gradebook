@@ -3,7 +3,7 @@
 // get all grades
 class Grade {
 
-  Private:
+  private:
     std::vector <double> labGrades;
     std::vector <double> assingmentGrades;
     std::vector <double> projectGrades;
@@ -15,7 +15,7 @@ class Grade {
 
     double totGrade;
 
-  Public:
+  public:
 
     //pushback the value given into the vector of Lab grades
 
