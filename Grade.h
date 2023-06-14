@@ -1,4 +1,6 @@
 // Grade.H
+#include <iostream>
+#include <vector>
 
 // get all grades
 class Grade {
