@@ -17,7 +17,7 @@ int Grade::getProjectGrade(int gradeValue) {
 	projectGrades.push_back(gradeValue);
 
 	Assignment project;
-  project.assingmentGrade = gradeValue;
+  project.assignmentGrade = gradeValue;
   project.assignmentName = gradeName;
   projectGrades.push_back(project);
 	
