@@ -14,11 +14,14 @@ int Grade::getAssignmentGrade(int gradeValue){
 //pushback the value given into the vector of project grades 
 int Grade::getProjectGrade(int gradeValue) {
   //takes the grade value uses it to do projectGrades.pushback(gradeValue)
+	projectGrades.push_back(gradeValue);
  }
 
 //sets the value of private Final exam
 int Grade::getFinalExamGrade(int gradeValue){ 
   //uses this keyword to set private value of finalExam to gradeValue
+	this->examGrade = gradeValue;
+	
  }
 
 //uses private vector to get total lab grades using vec.size() 
