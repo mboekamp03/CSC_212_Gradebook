@@ -15,6 +15,12 @@ int Grade::getAssignmentGrade(int gradeValue){
 int Grade::getProjectGrade(int gradeValue) {
   //takes the grade value uses it to do projectGrades.pushback(gradeValue)
 	projectGrades.push_back(gradeValue);
+
+	Assignment project;
+  project.assingmentGrade = gradeValue;
+  project.assignmentName = gradeName;
+  projectGrades.push_back(project);
+	
  }
 
 //sets the value of private Final exam
