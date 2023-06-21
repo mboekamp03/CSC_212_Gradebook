@@ -155,4 +155,5 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
     else {
        return 0;
     }
+  return foundGrade;
 }
