@@ -8,7 +8,7 @@ class Grade {
   private:
     struct Assignment {
         std::string assignmentName;
-        int assignmentGrade;
+        double assignmentGrade;
     };
 
     std::vector <Assignment> labGrades;
@@ -49,4 +49,6 @@ class Grade {
     //uses private totlab and totAssignment along with vector for project grades
 
     double totGrade();
+
+    double getIndividualGrade(std::string gradeCategory, std::string gradeName);
   };
