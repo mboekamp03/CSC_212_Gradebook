@@ -119,3 +119,40 @@ double Grade::totGrade(){
 
     std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
 }
+
+double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeName)  {
+    bool found = false;
+    int i = 0;
+    double foundGrade = 0;
+
+    if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
+        while (found == false) {
+            if (labGrades[i].assignmentName == gradeName) {
+                foundGrade = labGrades[i].assignmentGrade;
+                found == true;
+            }
+            i++;
+        }
+    }
+    else if (gradeCategory == "Homework" || gradeCategory == "homework" ) {
+        while (found == false) {
+            if (assignmentGrades[i].assignmentName == gradeName) {
+                foundGrade = labGrades[i].assignmentGrade;
+                found == true;
+            }
+            i++;
+        }
+    }
+    else if (gradeCategory == "Project" || gradeCategory == "project" ) {
+        while (found == false) {
+            if (projectGrades[i].assignmentName == gradeName) {
+                foundGrade = labGrades[i].assignmentGrade;
+                found == true;
+            }
+            i++;
+        }
+    }
+    else {
+       return 0;
+    }
+}
