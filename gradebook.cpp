@@ -40,11 +40,10 @@ double Grade::getFinalExamGrade(){
 }
 
 std::string Grade::getStudentName(){
-    return studentName;
+    return this->studentName;
 }
-
 //uses private vector to get total lab grades using vec.size()
-double Grade::setTotLab(){
+void Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     int sum = 0;
     int totLab = 0;
@@ -58,11 +57,11 @@ double Grade::setTotLab(){
     }
 
     totLab = sum;
-    return totLab;
+    this->totLab = totLab;
 }
 
 //uses private vector to get total Assignment grades using vec.size()
-double Grade::setTotAssignment(){
+void Grade::setTotAssignment(){
     int sum = 0;
     int totAssignment = 0;
 
@@ -73,7 +72,7 @@ double Grade::setTotAssignment(){
     }
 
     totAssignment = sum;
-    return totAssignment;
+    this->totAssignment = totAssignment;
 }
 void Grade::setStudentName(std::string name){
     this->studentName = name;
@@ -208,22 +207,22 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
 }
 
 void Grade::printCategory(int ifChoice) {
-  if(ifChoice == 1) {
-    for(int i = 0; i < labGrades.size(); i++) {
-      std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
-      std::cout<< " " <<std::endl;
+    if(ifChoice == 1) {
+        for(int i = 0; i < labGrades.size(); i++) {
+            std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
+        }
     }
-  }
-  else if(ifChoice == 2) {
-    for(int i = 0; i < assignmentGrades.size(); i++) {
-      std::cout<< assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << std::endl;
-      std::cout<< " " <<std::endl;
+    else if(ifChoice == 2) {
+        for(int i = 0; i < assignmentGrades.size(); i++) {
+            std::cout<< assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
+        }
     }
-  }
-  else if(ifChoice == 3) {
-    for(int i = 0; i < projectGrades.size(); i++) {
-      std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
-      std::cout<< " " <<std::endl;
+    else if(ifChoice == 3) {
+        for(int i = 0; i < projectGrades.size(); i++) {
+            std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
+        }
     }
-  }
 }
