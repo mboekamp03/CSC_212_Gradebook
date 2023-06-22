@@ -62,3 +62,11 @@ void menu(){
     std::cout << "5. View Individual Grade" << '\n';
     std::cout << "0: To Quit" << '\n';
 }
+
+void catMenu(){
+    std::cout << "Choose a number to choose a category!" << '\n';
+    std::cout << "1: LABS" << '\n';
+    std::cout << "2: ASSIGNMENTS" << '\n';
+    std::cout << "3: PROJECTS" << '\n';
+}
+
