@@ -2,7 +2,7 @@
 #include "Grade.h"
 
 //pushback the value given into the vector of Lab grades
-void Grade::getLabGrade(int gradeValue, std::string gradeName){
+void Grade::setLabGrade(int gradeValue, std::string gradeName){
     //takes the grade value uses it to do labGrades.pushback(gradeValue)
     Assignment lab;
     lab.assignmentGrade = gradeValue;
@@ -11,7 +11,7 @@ void Grade::getLabGrade(int gradeValue, std::string gradeName){
 }
 
 //pushback the value given into the vector of Assignment grades
-void Grade::getAssignmentGrade(int gradeValue, std::string gradeName){
+void Grade::setAssignmentGrade(int gradeValue, std::string gradeName){
     //takes the grade value uses it to do assignmentGrades.pushback(gradeValue)
     Assignment assignment;
     assignment.assignmentGrade = gradeValue;
@@ -21,7 +21,7 @@ void Grade::getAssignmentGrade(int gradeValue, std::string gradeName){
 }
 
 //pushback the value given into the vector of project grades
-void Grade::getProjectGrade(int gradeValue, std::string gradeName) {
+void Grade::setProjectGrade(int gradeValue, std::string gradeName) {
     //takes the grade value uses it to do projectGrades.pushback(gradeValue)
     Assignment project;
     project.assignmentGrade = gradeValue;
@@ -31,7 +31,7 @@ void Grade::getProjectGrade(int gradeValue, std::string gradeName) {
 }
 
 //sets the value of private Final exam
-void Grade::getFinalExamGrade(int gradeValue){
+void Grade::setFinalExamGrade(int gradeValue){
     //uses this keyword to set private value of finalExam to gradeValue
     this->examGrade = gradeValue;
 }
