@@ -2,30 +2,33 @@
 #include "gradebook.h"
 
 //pushback the value given into the vector of Lab grades
-void Grade::setLabGrade(int gradeValue, std::string gradeName){
+void Grade::setLabGrade(int gradeValue, int totalValue, std::string gradeName){
     //takes the grade value uses it to do labGrades.pushback(gradeValue)
     Assignment lab;
     lab.assignmentGrade = gradeValue;
     lab.assignmentName = gradeName;
+    lab.totalGrade = totalValue;
     labGrades.push_back(lab);
 }
 
 //pushback the value given into the vector of Assignment grades
-void Grade::setAssignmentGrade(int gradeValue, std::string gradeName){
+void Grade::setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName){
     //takes the grade value uses it to do assignmentGrades.pushback(gradeValue)
     Assignment assignment;
     assignment.assignmentGrade = gradeValue;
     assignment.assignmentName = gradeName;
+    assignment.totalGrade = totalValue;
     assignmentGrades.push_back(assignment);
 
 }
 
 //pushback the value given into the vector of project grades
-void Grade::setProjectGrade(int gradeValue, std::string gradeName) {
+void Grade::setProjectGrade(int gradeValue, int totalValue, std::string gradeName) {
     //takes the grade value uses it to do projectGrades.pushback(gradeValue)
     Assignment project;
     project.assignmentGrade = gradeValue;
     project.assignmentName = gradeName;
+    project.totalGrade = totalValue;
     projectGrades.push_back(project);
 
 }
@@ -47,7 +50,6 @@ void Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     int sum = 0;
     int totLab = 0;
-
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < labGrades.size(); i++){
@@ -97,7 +99,6 @@ void Grade::setTotGrade(){
     for(int i = 1;i <= labGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
-
 
     }
     totalPoints = totalPoints + labGrades.size() * 5;
@@ -205,6 +206,33 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
     }
     else {
         examGrade = newGrade;
+    }
+}
+
+void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal)  {
+    if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
+        for (int i = 0; i < labGrades.size(); i++) {
+            if (labGrades[i].assignmentName == gradeName) {
+                labGrades[i].totalGrade = newTotal;
+            }
+        }
+    }
+    else if (gradeCategory == "Assignment" || gradeCategory == "assignment" ) {
+        for (int i = 0; i < assignmentGrades.size(); i++) {
+            if (assignmentGrades[i].assignmentName == gradeName) {
+                assignmentGrades[i].totalGrade = newTotal;
+            }
+        }
+    }
+    else if (gradeCategory == "Project" || gradeCategory == "project" ) {
+        for (int i = 0; i < projectGrades.size(); i++) {
+            if (projectGrades[i].assignmentName == gradeName) {
+                projectGrades[i].totalGrade = newTotal;
+            }
+        }
+    }
+    else {
+        examGrade = newTotal;
     }
 }
 
