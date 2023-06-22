@@ -41,6 +41,8 @@ public:
     //gets final exam grade
     double getFinalExamGrade();
 
+    std::string getStudentName();
+
     //uses private vector to get total lab grades using vec.size()
 
     void setStudentName(std::string name);
