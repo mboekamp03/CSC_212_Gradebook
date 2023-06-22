@@ -111,7 +111,9 @@ void Grade::setTotGrade(){
 
     sum = sum + examGrade;
 
-    std::cout<< sum << " _ " << totalPoints <<std::endl;
+    totalPoints += 100;
+
+    //std::cout<< sum << " _ " << totalPoints <<std::endl;
     //Adds full exam and full project values to total number of points
 
     if (projectGrades.size() == 2) {
