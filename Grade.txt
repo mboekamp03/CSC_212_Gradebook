@@ -1,4 +1,4 @@
-John Doe
+John
 Lab Lab1 25
 Lab Lab2 20
 Lab Lab3 25
