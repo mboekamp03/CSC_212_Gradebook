@@ -107,8 +107,13 @@ double Grade::setTotGrade(){
 
     std::cout<< sum << " _ " << totalPoints <<std::endl;
     //Adds full exam and full project values to total number of points
-    totalPoints += 100;
-    totalPoints+= 350;
+
+    if (projectGrades.size() == 2) {
+      totalPoints += 500;
+    }
+    else if (projectGrades.size() == 1) {
+      totalPoints += 150;
+    }
 
 
 
