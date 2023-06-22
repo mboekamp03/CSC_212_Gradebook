@@ -11,7 +11,7 @@ void catMenu();
 
 int main(int argc, char*argv[]) {
     Grade student;
-    int choice = 1, ifChoice;
+    int choice, ifChoice;
     std::string fileName = argv[1];
     std::ifstream file(fileName);
     std::string line;
@@ -45,6 +45,8 @@ int main(int argc, char*argv[]) {
             student.setFinalExamGrade(grade);
         }
     }
+
+    student.setTotGrade();
 
     while (choice != 0){
 
@@ -87,13 +89,15 @@ int main(int argc, char*argv[]) {
             std::cin >> gradeCat;
             std::cout << '\n' << "Input the Grade Name you would like to see. ";
             std::cin >> gradeName;
-            student.getIndividualGrade(gradeCat, gradeName);
+            std::cout << student.getIndividualGrade(gradeCat, gradeName) << '\n';
         }
         else if (choice < 0 || choice > 5 ){
             std::cout << "NOT A VALID OPTION!!!!!" << '\n';
         }
 
     }
+
+    std::cout << "Program End!";
 
     file.close();
     return 0;
