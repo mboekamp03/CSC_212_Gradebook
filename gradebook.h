@@ -1,4 +1,4 @@
-// Grade.H
+// gradebook.h
 
 #include <iostream>
 #include <vector>
