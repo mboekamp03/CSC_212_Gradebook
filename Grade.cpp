@@ -129,7 +129,7 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
         while (found == false) {
             if (labGrades[i].assignmentName == gradeName) {
                 foundGrade = labGrades[i].assignmentGrade;
-                found == true;
+                found = true;
             }
             i++;
         }
@@ -137,8 +137,8 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
     else if (gradeCategory == "Homework" || gradeCategory == "homework" ) {
         while (found == false) {
             if (assignmentGrades[i].assignmentName == gradeName) {
-                foundGrade = labGrades[i].assignmentGrade;
-                found == true;
+                foundGrade = assignmentGrades[i].assignmentGrade;
+                found = true;
             }
             i++;
         }
@@ -146,8 +146,8 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
     else if (gradeCategory == "Project" || gradeCategory == "project" ) {
         while (found == false) {
             if (projectGrades[i].assignmentName == gradeName) {
-                foundGrade = labGrades[i].assignmentGrade;
-                found == true;
+                foundGrade = projectGrades[i].assignmentGrade;
+                found = true;
             }
             i++;
         }
