@@ -31,16 +31,16 @@ int main(int argc, char*argv[]) {
         //testing to see what the category is so we can call the right function
 
         if (category == "Lab" || category == "lab"){
-            student.getLabGrade(grade, name);
+            student.setLabGrade(grade, name);
         }
         else if (category == "Assignment" || category == "assignment"){
-            student.getAssignmentGrade(grade, name);
+            student.setAssignmentGrade(grade, name);
         }
         else if (category == "Project" || category == "project"){
-            student.getProjectGrade(grade, name);
+            student.setProjectGrade(grade, name);
         }
         else{
-            student.getFinalExamGrade(grade);
+            student.setFinalExamGrade(grade);
         }
     }
     while (choice != 0){
