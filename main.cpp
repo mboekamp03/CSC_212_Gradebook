@@ -5,8 +5,11 @@
 #include <vector>
 #include "Grade.h"
 
+void menu();
+
 int main(int argc, char*argv[]) {
     Grade student;
+    int choice = 1;
     std::string fileName = argv[1];
     std::ifstream file(fileName);
     std::string line;
@@ -21,7 +24,7 @@ int main(int argc, char*argv[]) {
     while(std::getline(file, line)) {
         std::istringstream data(line);
 
-        //splitting data into category, name, grade
+        //spliting data into category, name, grade
 
         data >> category >> name >> grade;
 
@@ -40,6 +43,21 @@ int main(int argc, char*argv[]) {
             student.getFinalExamGrade(grade);
         }
     }
+    while (choice != 0){
+        menu();
+        //get choice to proceed
+        std::cin >> choice;
+    }
 
+    file.close();
     return 0;
+}
+
+void menu(){
+    std::cout << "Choose a number to view categories or make changes!" << '\n';
+    std::cout << "1: View Category" << '\n';
+    std::cout << "2: View Final" << '\n';
+    std::cout << "3: View Total Grade" << '\n';
+    std::cout << "4: Change a Grade" << '\n';
+    std::cout << "0: To Quit" << '\n';
 }
