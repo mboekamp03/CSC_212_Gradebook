@@ -201,3 +201,24 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
         examGrade = newGrade;
     }
 }
+
+void Grade::printCategory(int ifChoice) {
+  if(ifChoice == 1) {
+    for(int i = 0; i < labGrades.size(); i++) {
+      std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
+      std::cout<< " " <<std::endl;
+    }
+  }
+  else if(ifChoice == 2) {
+    for(int i = 0; i < assignmentGrades.size(); i++) {
+      std::cout<< assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << std::endl;
+      std::cout<< " " <<std::endl;
+    }
+  }
+  else if(ifChoice == 3) {
+    for(int i = 0; i < projectGrades.size(); i++) {
+      std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
+      std::cout<< " " <<std::endl;
+    }
+  }
+}
