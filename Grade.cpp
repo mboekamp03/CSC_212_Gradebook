@@ -35,7 +35,9 @@ void Grade::setFinalExamGrade(int gradeValue){
     //uses this keyword to set private value of finalExam to gradeValue
     this->examGrade = gradeValue;
 }
-
+double Grade::getFinalExamGrade(){
+    return this->examGrade;
+}
 //uses private vector to get total lab grades using vec.size()
 double Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
