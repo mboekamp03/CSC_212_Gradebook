@@ -1,5 +1,5 @@
 // Grade.cpp
-#include "Grade.h"
+#include "gradebook.h"
 
 //pushback the value given into the vector of Lab grades
 void Grade::setLabGrade(int gradeValue, std::string gradeName){
