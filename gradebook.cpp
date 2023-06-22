@@ -38,6 +38,11 @@ void Grade::setFinalExamGrade(int gradeValue){
 double Grade::getFinalExamGrade(){
     return this->examGrade;
 }
+
+std::string Grade::getStudentName(){
+    return studentName;
+}
+
 //uses private vector to get total lab grades using vec.size()
 double Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
