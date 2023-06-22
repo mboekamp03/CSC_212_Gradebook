@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -11,8 +10,11 @@ int main(int argc, char*argv[]) {
     std::ifstream file(fileName);
     std::string line;
     
-    while()
+    std::string category;
+    std::string name;
+    double grade;
 
-    
-    return 0;
-}
+    while(std::getline(file, line)) {
+        std::istringstream data(line);
+
+        data >> category >> name >> grade;
