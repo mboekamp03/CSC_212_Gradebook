@@ -136,7 +136,7 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
             i++;
         }
     }
-    else if (gradeCategory == "Homework" || gradeCategory == "homework" ) {
+    else if (gradeCategory == "Assignment" || gradeCategory == "assignment" ) {
         while (found == false && i < assignmentGrades.size()) {
             if (assignmentGrades[i].assignmentName == gradeName) {
                 foundGrade = assignmentGrades[i].assignmentGrade;
@@ -155,9 +155,9 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
         }
     }
     else {
-        return 0;
+       return 0;
     }
-    return foundGrade;
+  return foundGrade;
 }
 
 void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double newGrade)  {
@@ -168,15 +168,15 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
           }
         }
     }
-    else if (gradeCategory == "Homework" || gradeCategory == "homework" ) {
-        for (int i = 0; i < labGrades.size(); i++) {
+    else if (gradeCategory == "Assignment" || gradeCategory == "assignment" ) {
+        for (int i = 0; i < assignmentGrades.size(); i++) {
           if (assignmentGrades[i].assignmentName == gradeName) {
             assignmentGrades[i].assignmentGrade = newGrade;
           }
         }
     }
     else if (gradeCategory == "Project" || gradeCategory == "project" ) {
-        for (int i = 0; i < labGrades.size(); i++) {
+        for (int i = 0; i < projectGrades.size(); i++) {
           if (projectGrades[i].assignmentName == gradeName) {
             projectGrades[i].assignmentGrade = newGrade;
           }
