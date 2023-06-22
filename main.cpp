@@ -21,25 +21,25 @@ int main(int argc, char*argv[]) {
 
     std::string category;
     std::string name;
-    double grade;
+    double grade, totalGrade;
 
     while(std::getline(file, line)) {
         std::istringstream data(line);
 
         //spliting data into category, name, grade
 
-        data >> category >> name >> grade;
+        data >> category >> name >> grade >> totalGrade;
 
         //testing to see what the category is so we can call the right function
 
         if (category == "Lab" || category == "lab"){
-            student.setLabGrade(grade, name);
+            student.setLabGrade(grade, totalGrade, name);
         }
         else if (category == "Assignment" || category == "assignment"){
-            student.setAssignmentGrade(grade, name);
+            student.setAssignmentGrade(grade, totalGrade, name);
         }
         else if (category == "Project" || category == "project"){
-            student.setProjectGrade(grade, name);
+            student.setProjectGrade(grade, totalGrade, name);
         }
         else{
             student.setFinalExamGrade(grade);
@@ -119,4 +119,3 @@ void catMenu(){
     std::cout << "2: ASSIGNMENTS" << '\n';
     std::cout << "3: PROJECTS" << '\n';
 }
-
