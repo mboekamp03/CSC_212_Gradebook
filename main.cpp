@@ -11,7 +11,7 @@ void catMenu();
 
 int main(int argc, char*argv[]) {
     Grade student;
-    int choice, ifChoice;
+    int choice = 1, ifChoice;
     std::string fileName = argv[1];
     std::ifstream file(fileName);
     std::string line;
