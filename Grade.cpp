@@ -159,3 +159,30 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
     }
     return foundGrade;
 }
+
+void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double newGrade)  {
+    if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
+        for (int i = 0; i < labGrades.size(); i++) {
+          if (labGrades[i].assignmentName == gradeName) {
+            labGrades[i].assignmentGrade = newGrade;
+          }
+        }
+    }
+    else if (gradeCategory == "Homework" || gradeCategory == "homework" ) {
+        for (int i = 0; i < labGrades.size(); i++) {
+          if (assignmentGrades[i].assignmentName == gradeName) {
+            assignmentGrades[i].assignmentGrade = newGrade;
+          }
+        }
+    }
+    else if (gradeCategory == "Project" || gradeCategory == "project" ) {
+        for (int i = 0; i < labGrades.size(); i++) {
+          if (projectGrades[i].assignmentName == gradeName) {
+            projectGrades[i].assignmentGrade = newGrade;
+          }
+        }
+    }
+    else {
+       examGrade = newGrade;
+    }
+}
