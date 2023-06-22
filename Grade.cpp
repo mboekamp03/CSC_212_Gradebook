@@ -70,7 +70,7 @@ double Grade::setTotAssignment(){
 }
 
 //uses private totlab and totAssignment along with vector for project grades
-double Grade::totGrade(){
+double Grade::setTotGrade(){
 
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     int sum = 0;
