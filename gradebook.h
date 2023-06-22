@@ -60,4 +60,6 @@ public:
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
 
     void changeGrade(std::string gradeCategory, std::string gradeName, double newGrade);
+
+    void printCategory(int ifChoice);
 };
