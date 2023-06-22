@@ -39,7 +39,7 @@ public:
     void setFinalExamGrade(int gradeValue);
 
     //gets final exam grade
-    double getFinalExamGrade();    
+    double getFinalExamGrade();
 
     //uses private vector to get total lab grades using vec.size()
 
@@ -53,7 +53,9 @@ public:
 
     //uses private totlab and totAssignment along with vector for project grades
 
-    double setTotGrade();
+    void setTotGrade();
+    
+    double getTotGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
 
