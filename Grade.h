@@ -24,19 +24,19 @@ public:
 
     //pushback the value given into the vector of Lab grades
 
-    void getLabGrade(int gradeValue, std::string gradeName);
+    void setLabGrade(int gradeValue, std::string gradeName);
 
     //pushback the value given into the vector of Assignment grades
 
-    void getAssignmentGrade(int gradeValue, std::string gradeName);
+    void setAssignmentGrade(int gradeValue, std::string gradeName);
 
     //pushback the value given into the vector of project grades
 
-    void getProjectGrade(int gradeValue, std::string gradeName);
+    void setProjectGrade(int gradeValue, std::string gradeName);
 
     //sets the value of private Final exam
 
-    void getFinalExamGrade(int gradeValue);
+    void setFinalExamGrade(int gradeValue);
 
     //uses private vector to get total lab grades using vec.size()
 
