@@ -48,7 +48,7 @@ class Grade {
 
     //uses private totlab and totAssignment along with vector for project grades
 
-    double totGrade();
+    double setTotGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
   };
