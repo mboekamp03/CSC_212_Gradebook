@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "Grade.h"
+#include "gradebook.h"
 
 void menu();
 void catMenu();
