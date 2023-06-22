@@ -7,7 +7,7 @@ void Grade::setLabGrade(int gradeValue, std::string gradeName){
     Assignment lab;
     lab.assignmentGrade = gradeValue;
     lab.assignmentName = gradeName;
-    projectGrades.push_back(lab);
+    labGrades.push_back(lab);
 }
 
 //pushback the value given into the vector of Assignment grades
