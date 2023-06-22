@@ -159,10 +159,12 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
             i++;
         }
     }
-    else {
-       return 0;
-    }
-  return foundGrade;
+  if (found == false) {
+    return 0;
+  }
+  else {
+    return foundGrade;
+  }
 }
 
 void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double newGrade)  {
