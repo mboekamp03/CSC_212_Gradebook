@@ -21,7 +21,7 @@ int main(int argc, char*argv[]) {
     while(std::getline(file, line)) {
         std::istringstream data(line);
 
-        //spliting data into category, name, grade
+        //splitting data into category, name, grade
 
         data >> category >> name >> grade;
 
