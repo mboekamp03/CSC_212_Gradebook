@@ -54,6 +54,7 @@ int main(int argc, char*argv[]) {
             catMenu();
             std::cin >> ifChoice;
             student.printCategory(ifChoice);
+
         }
         else if (choice == 2){
             std::cout << student.getFinalExamGrade() << '\n';
@@ -61,7 +62,26 @@ int main(int argc, char*argv[]) {
         else if (choice == 3){
             std::cout << student.getTotGrade() << '\n';
         }
+        else if (choice == 4){
+            int newGrade;
+            std::string gradeCat;
+            std::string gradeName;
 
+            std::cout << "Please input the name of the category! (example: lab/ assignment / project) ";
+            std::cin >> gradeCat;
+            std::cout << '\n' << "Input the Grade Name you would like to change. ";
+            std::cin >> gradeName;
+            std::cout << '\n' << "Input the New Grade. ";
+            std::cin >> newGrade;
+            std::cout << '\n';
+            student.changeGrade(gradeCat, gradeName, newGrade);
+        }
+        else if (choice == 5){
+
+        }
+        else{
+            std::cout << "NOT A VALID OPTION!!!!!" << '\n';
+        }
     }
 
     file.close();
