@@ -6,6 +6,8 @@
 #include "Grade.h"
 
 void menu();
+void catMenu();
+
 
 int main(int argc, char*argv[]) {
     Grade student;
@@ -47,6 +49,17 @@ int main(int argc, char*argv[]) {
         menu();
         //get choice to proceed
         std::cin >> choice;
+
+        if (choice == 1){
+            catMenu();
+        }
+        else if (choice == 2){
+            std::cout << student.getFinalExamGrade() << '\n';
+        }
+        else if (choice == 3){
+            std::cout << student.getTotGrade() << '\n';
+        }
+
     }
 
     file.close();
@@ -56,7 +69,7 @@ int main(int argc, char*argv[]) {
 void menu(){
     std::cout << "Choose a number to view categories or make changes!" << '\n';
     std::cout << "1: View Category" << '\n';
-    std::cout << "2: View Final" << '\n';
+    std::cout << "2: View Final Exam" << '\n';
     std::cout << "3: View Total Grade" << '\n';
     std::cout << "4: Change a Grade" << '\n';
     std::cout << "5. View Individual Grade" << '\n';
