@@ -42,21 +42,20 @@ public:
     double getFinalExamGrade();
 
     std::string getStudentName();
-
     //uses private vector to get total lab grades using vec.size()
 
     void setStudentName(std::string name);
 
-    double setTotLab();
+    void setTotLab();
 
     //uses private vector to get total Assignment grades using vec.size()
 
-    double setTotAssignment();
+    void setTotAssignment();
 
     //uses private totlab and totAssignment along with vector for project grades
 
     void setTotGrade();
-    
+
     double getTotGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
