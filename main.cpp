@@ -59,5 +59,6 @@ void menu(){
     std::cout << "2: View Final" << '\n';
     std::cout << "3: View Total Grade" << '\n';
     std::cout << "4: Change a Grade" << '\n';
+    std::cout << "5. View Individual Grade" << '\n';
     std::cout << "0: To Quit" << '\n';
 }
