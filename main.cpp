@@ -18,3 +18,7 @@ int main(int argc, char*argv[]) {
         std::istringstream data(line);
 
         data >> category >> name >> grade;
+    }
+    
+    return 0;
+}
