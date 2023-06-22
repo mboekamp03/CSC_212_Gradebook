@@ -18,6 +18,19 @@ int main(int argc, char*argv[]) {
         std::istringstream data(line);
 
         data >> category >> name >> grade;
+
+        if (category == 'Lab' || category == 'lab'){
+            getLabGrade(grade, name);
+        }
+        else if (category == 'Assignment' || category == 'assignment'){
+            getAssignmentGrade(grade, name);
+        }
+        else if (category == 'Project' || category == 'project'){
+            getProjectGrade(grade, name);
+        }
+        else{
+            getFinalExamGrade(grade);
+        }
     }
     
     return 0;
