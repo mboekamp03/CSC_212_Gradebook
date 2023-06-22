@@ -11,7 +11,7 @@ void catMenu();
 
 int main(int argc, char*argv[]) {
     Grade student;
-    int choice = 1;
+    int choice = 1, ifChoice;
     std::string fileName = argv[1];
     std::ifstream file(fileName);
     std::string line;
@@ -52,6 +52,8 @@ int main(int argc, char*argv[]) {
 
         if (choice == 1){
             catMenu();
+            std::cin >> ifChoice;
+            student.printCategory(ifChoice);
         }
         else if (choice == 2){
             std::cout << student.getFinalExamGrade() << '\n';
