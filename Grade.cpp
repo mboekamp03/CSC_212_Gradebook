@@ -74,7 +74,7 @@ void Grade::setStudentName(std::string name){
     this->studentName = name;
 }
 //uses private totlab and totAssignment along with vector for project grades
-double Grade::setTotGrade(){
+void Grade::setTotGrade(){
 
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     int sum = 0;
@@ -111,10 +111,10 @@ double Grade::setTotGrade(){
     //Adds full exam and full project values to total number of points
 
     if (projectGrades.size() == 2) {
-      totalPoints += 500;
+        totalPoints += 500;
     }
     else if (projectGrades.size() == 1) {
-      totalPoints += 150;
+        totalPoints += 150;
     }
 
 
@@ -125,9 +125,15 @@ double Grade::setTotGrade(){
 
 
 
-
-    std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
+    this->totGrade = Total;
+    //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
 }
+
+double Grade::getTotGrade(){
+    return this->totGrade;
+}
+
+
 
 double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeName)  {
     bool found = false;
@@ -161,37 +167,37 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
             i++;
         }
     }
-  if (found == false) {
-    return 0;
-  }
-  else {
-    return foundGrade;
-  }
+    if (found == false) {
+        return 0;
+    }
+    else {
+        return foundGrade;
+    }
 }
 
 void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double newGrade)  {
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         for (int i = 0; i < labGrades.size(); i++) {
-          if (labGrades[i].assignmentName == gradeName) {
-            labGrades[i].assignmentGrade = newGrade;
-          }
+            if (labGrades[i].assignmentName == gradeName) {
+                labGrades[i].assignmentGrade = newGrade;
+            }
         }
     }
     else if (gradeCategory == "Assignment" || gradeCategory == "assignment" ) {
         for (int i = 0; i < assignmentGrades.size(); i++) {
-          if (assignmentGrades[i].assignmentName == gradeName) {
-            assignmentGrades[i].assignmentGrade = newGrade;
-          }
+            if (assignmentGrades[i].assignmentName == gradeName) {
+                assignmentGrades[i].assignmentGrade = newGrade;
+            }
         }
     }
     else if (gradeCategory == "Project" || gradeCategory == "project" ) {
         for (int i = 0; i < projectGrades.size(); i++) {
-          if (projectGrades[i].assignmentName == gradeName) {
-            projectGrades[i].assignmentGrade = newGrade;
-          }
+            if (projectGrades[i].assignmentName == gradeName) {
+                projectGrades[i].assignmentGrade = newGrade;
+            }
         }
     }
     else {
-       examGrade = newGrade;
+        examGrade = newGrade;
     }
 }
