@@ -16,9 +16,13 @@ int main(int argc, char*argv[]) {
 
     while(std::getline(file, line)) {
         std::istringstream data(line);
-
+        
+        //spliting data into category, name, grade
+        
         data >> category >> name >> grade;
 
+        //testing to see what the category is so we can call the right function
+        
         if (category == 'Lab' || category == 'lab'){
             getLabGrade(grade, name);
         }
