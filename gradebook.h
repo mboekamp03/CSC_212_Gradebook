@@ -9,6 +9,7 @@ private:
     struct Assignment {
         std::string assignmentName;
         double assignmentGrade;
+        double totalGrade;
     };
     std::string studentName;
     std::vector <Assignment> labGrades;
@@ -24,15 +25,15 @@ public:
 
     //pushback the value given into the vector of Lab grades
 
-    void setLabGrade(int gradeValue, std::string gradeName);
+    void setLabGrade(int gradeValue, int totalValue, std::string gradeName);
 
     //pushback the value given into the vector of Assignment grades
 
-    void setAssignmentGrade(int gradeValue, std::string gradeName);
+    void setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName);
 
     //pushback the value given into the vector of project grades
 
-    void setProjectGrade(int gradeValue, std::string gradeName);
+    void setProjectGrade(int gradeValue, int totalValue, std::string gradeName);
 
     //sets the value of private Final exam
 
@@ -61,6 +62,8 @@ public:
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
 
     void changeGrade(std::string gradeCategory, std::string gradeName, double newGrade);
+
+    void changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal);
 
     void printCategory(int ifChoice);
 };
