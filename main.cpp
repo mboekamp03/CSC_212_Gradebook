@@ -45,11 +45,15 @@ int main(int argc, char*argv[]) {
             student.setFinalExamGrade(grade);
         }
     }
+
     while (choice != 0){
-        std::cout << student.getStudentName();
+
         menu();
         //get choice to proceed
         std::cin >> choice;
+
+        std::cout << student.getStudentName();
+
 
         if (choice == 1){
             catMenu();
@@ -86,13 +90,10 @@ int main(int argc, char*argv[]) {
             std::cin >> gradeName;
             student.getIndividualGrade(gradeCat, gradeName);
         }
-        else{
+        else if (choice < 0 || choice > 5 ){
             std::cout << "NOT A VALID OPTION!!!!!" << '\n';
         }
 
-        menu();
-
-        std::cin >> choice;
     }
 
     file.close();
