@@ -48,11 +48,10 @@ int main(int argc, char*argv[]) {
 
     while (choice != 0){
 
+        std::cout << student.getStudentName() << '\n';
         menu();
         //get choice to proceed
         std::cin >> choice;
-
-        std::cout << student.getStudentName();
 
 
         if (choice == 1){
