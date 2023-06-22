@@ -5,22 +5,22 @@
 // get all grades
 class Grade {
 
-  private:
+private:
     struct Assignment {
         std::string assignmentName;
         double assignmentGrade;
     };
-
+    std::string studentName;
     std::vector <Assignment> labGrades;
     std::vector <Assignment> assignmentGrades;
     std::vector <Assignment> projectGrades;
     double examGrade;
- 
+
     double totLab;
     double totAssignment;
     double totGrade;
 
-  public:
+public:
 
     //pushback the value given into the vector of Lab grades
 
@@ -40,6 +40,8 @@ class Grade {
 
     //uses private vector to get total lab grades using vec.size()
 
+    void setStudentName(std::string name);
+
     double setTotLab();
 
     //uses private vector to get total Assignment grades using vec.size()
@@ -51,4 +53,4 @@ class Grade {
     double setTotGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
-  };
+};
