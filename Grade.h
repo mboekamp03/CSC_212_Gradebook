@@ -53,4 +53,6 @@ public:
     double setTotGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
+
+    void changeGrade(std::string gradeCategory, std::string gradeName, double newGrade);
 };
