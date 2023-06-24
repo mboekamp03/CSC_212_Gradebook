@@ -12,6 +12,7 @@ void catMenu();
 int main(int argc, char*argv[]) {
     Grade student;
     int choice = 1, ifChoice;
+    bool changesMade = false;
     std::string fileName = argv[1];
     std::ifstream file(fileName);
     std::string line;
@@ -33,13 +34,13 @@ int main(int argc, char*argv[]) {
         //testing to see what the category is so we can call the right function
 
         if (category == "Lab" || category == "lab"){
-            student.setLabGrade(grade, totalGrade, name);
+            student.setLabGrade(grade, totalGrade, name, category);
         }
         else if (category == "Assignment" || category == "assignment"){
-            student.setAssignmentGrade(grade, totalGrade, name);
+            student.setAssignmentGrade(grade, totalGrade, name, category);
         }
         else if (category == "Project" || category == "project"){
-            student.setProjectGrade(grade, totalGrade, name);
+            student.setProjectGrade(grade, totalGrade, name, category);
         }
         else{
             student.setFinalExamGrade(grade);
@@ -81,6 +82,8 @@ int main(int argc, char*argv[]) {
             std::cin >> newGrade;
             std::cout << '\n';
             student.changeGrade(gradeCat, gradeName, newGrade);
+
+            changesMade = true;
         }
         else if (choice == 5){
             std::string gradeCat;
@@ -98,6 +101,11 @@ int main(int argc, char*argv[]) {
     }
 
     std::cout << "Program End!";
+
+    if(changesMade == true) {
+        std::ofstream file(fileName, std::ofstream::out | std::ofstream::trunc);
+        student.outputFile(fileName);
+    }
 
     file.close();
     return 0;
