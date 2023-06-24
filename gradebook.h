@@ -16,6 +16,7 @@ private:
     std::vector <Assignment> labGrades;
     std::vector <Assignment> assignmentGrades;
     std::vector <Assignment> projectGrades;
+    std::vector <Assignment> examGrades;
     double examGrade;
 
     double totLab;
@@ -38,7 +39,7 @@ public:
 
     //sets the value of private Final exam
 
-    void setFinalExamGrade(int gradeValue);
+    void setExamGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
 
     //gets final exam grade
     double getFinalExamGrade();
