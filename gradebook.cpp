@@ -3,7 +3,7 @@
 #include <fstream>
 
 //pushback the value given into the vector of Lab grades
-void Grade::setLabGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat){
+void Grade::setLabGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat){
     //takes the grade value uses it to do labGrades.pushback(gradeValue)
     Assignment lab;
     lab.assignmentGrade = gradeValue;
@@ -14,7 +14,7 @@ void Grade::setLabGrade(int gradeValue, int totalValue, std::string gradeName, s
 }
 
 //pushback the value given into the vector of Assignment grades
-void Grade::setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat){
+void Grade::setAssignmentGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat){
     //takes the grade value uses it to do assignmentGrades.pushback(gradeValue)
     Assignment assignment;
     assignment.assignmentGrade = gradeValue;
@@ -26,7 +26,7 @@ void Grade::setAssignmentGrade(int gradeValue, int totalValue, std::string grade
 }
 
 //pushback the value given into the vector of project grades
-void Grade::setProjectGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat) {
+void Grade::setProjectGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat) {
     //takes the grade value uses it to do projectGrades.pushback(gradeValue)
     Assignment project;
     project.assignmentGrade = gradeValue;
@@ -37,8 +37,7 @@ void Grade::setProjectGrade(int gradeValue, int totalValue, std::string gradeNam
 
 }
 
-//sets the value of private Final exam
-void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat) {
+void Grade::setExamGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat) {
     //takes the grade value uses it to do examGrades.pushback(gradeValue)
     Assignment exam;
     exam.assignmentGrade = gradeValue;
@@ -48,7 +47,6 @@ void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, 
     examGrades.push_back(exam);
 
 }
-
 
 std::string Grade::getStudentName(){
     return this->studentName;
@@ -63,7 +61,6 @@ void Grade::setTotLab(){
     for(int i = 0; i < labGrades.size(); i++){
         int currentGrade = labGrades[i].assignmentGrade;
         sum = currentGrade + sum;
-
     }
 
     totLab = sum;
@@ -84,9 +81,11 @@ void Grade::setTotAssignment(){
     totAssignment = sum;
     this->totAssignment = totAssignment;
 }
+
 void Grade::setStudentName(std::string name){
     this->studentName = name;
 }
+
 //uses private totlab and totAssignment along with vector for project grades
 void Grade::setTotGrade(){
 
@@ -96,14 +95,14 @@ void Grade::setTotGrade(){
 
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
-    for(int i = 0; i<assignmentGrades.size(); i++){
+    for(int i = 0; i < assignmentGrades.size(); i++){
         sum = assignmentGrades[i].assignmentGrade + sum;
         totalPoints = totalPoints + assignmentGrades[i].totalGrade;
     }
 
 
     //Loops through labs vector, converts the percent to its point weight, and adds it to the sum, then adds total possible points to totalPoints.
-    for(int i = 1; i <= labGrades.size(); i++){
+    for(int i = 0; i < labGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
         totalPoints = totalPoints + labGrades[i].totalGrade;
@@ -112,13 +111,13 @@ void Grade::setTotGrade(){
 
 
     //Converts the project grade percent to its weight in points, adds it to the sum and total possible points to totalPoints
-    for(int i = 1;i <= projectGrades.size(); i++){
+    for(int i = 0; i < projectGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + projectGrades[i].assignmentGrade;
         totalPoints = totalPoints + projectGrades[i].totalGrade;
     }
 
-    for(int i = 1;i <= examGrades.size(); i++){
+    for(int i = 0; i < examGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + examGrades[i].assignmentGrade;
         totalPoints = totalPoints + examGrades[i].totalGrade;
@@ -137,11 +136,52 @@ void Grade::setTotGrade(){
     //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
 }
 
+void Grade::setOverallGrade(){
+
+    //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
+    int sum = 0;
+    int totalPoints = 1000;
+
+
+    //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
+    for(int i = 0; i < assignmentGrades.size(); i++){
+        sum = assignmentGrades[i].assignmentGrade + sum;
+    }
+
+
+    //Loops through labs vector, converts the percent to its point weight, and adds it to the sum, then adds total possible points to totalPoints.
+    for(int i = 0; i < labGrades.size(); i++){
+        //labGrades[i] = 5;
+        sum = sum + labGrades[i].assignmentGrade;
+    }
+
+
+    //Converts the project grade percent to its weight in points, adds it to the sum and total possible points to totalPoints
+    for(int i = 0; i < projectGrades.size(); i++){
+        //labGrades[i] = 5;
+        sum = sum + projectGrades[i].assignmentGrade;
+    }
+
+    for(int i = 0; i < examGrades.size(); i++){
+        //labGrades[i] = 5;
+        sum = sum + examGrades[i].assignmentGrade;
+    }
+
+    //Calculates a final percentage grade using sum and totalPoints, couts the grade.
+    float Total = (float)sum/totalPoints;
+    Total= Total * 100;
+
+    this->overallGrade = Total;
+    //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
+}
+
 double Grade::getTotGrade(){
     return this->totGrade;
 }
 
-
+double Grade::getOverallGrade(){
+    return this->overallGrade;
+}
 
 double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeName)  {
     bool found = false;
@@ -226,7 +266,6 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
     }
 }
 
-
 void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal)  {
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         for (int i = 0; i < labGrades.size(); i++) {
@@ -263,78 +302,58 @@ void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, d
 
 void Grade::printCategory(int ifChoice) {
     if(ifChoice == 1) {
-        if(!labGrades.empty()) {
-            for (int i = 0; i < labGrades.size(); i++) {
-                std::cout << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
-                std::cout << " " << std::endl;
-            }
-        }
-        else{
-            std::cout << "There are no lab grades available! " << '\n';
+        for(int i = 0; i < labGrades.size(); i++) {
+            std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
         }
     }
     else if(ifChoice == 2) {
-        if (!assignmentGrades.empty()) {
-            for (int i = 0; i < assignmentGrades.size(); i++) {
-                std::cout << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade
-                          << std::endl;
-                std::cout << " " << std::endl;
-            }
-        }
-        else{
-            std::cout << "There are no assignment grades available! " << '\n';
+        for(int i = 0; i < assignmentGrades.size(); i++) {
+            std::cout<< assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
         }
     }
     else if(ifChoice == 3) {
-        if (!projectGrades.empty()) {
-            for (int i = 0; i < projectGrades.size(); i++) {
-                std::cout << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
-                std::cout << " " << std::endl;
-            }
-        }
-        else {
-            std::cout << "There are no project grades available! " << '\n';
+        for(int i = 0; i < projectGrades.size(); i++) {
+            std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
         }
     }
-    else if (ifChoice == 4){
+    else if(ifChoice == 4) {
         for(int i = 0; i < examGrades.size(); i++) {
             std::cout<< examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << std::endl;
             std::cout<< " " <<std::endl;
         }
-
-    }
-    else{
-        std::cout << "NOT A VALID OPTION" << '\n';
     }
 }
 
 void Grade::outputFile(std::string fileName) {
     std::ofstream outputFile(fileName);
 
-    // Write the student name
-    outputFile << studentName << std::endl;
+        // Write the student name
+        outputFile << studentName << std::endl;
 
-    // Write the lab grades
-    for (int i = 0; i < labGrades.size(); i++) {
-        outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
-    }
+        // Write the lab grades
+        for (int i = 0; i < labGrades.size(); i++) {
+            outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
+        }
 
-    // Write the assignment grades
-    for (int i = 0; i < assignmentGrades.size(); i++) {
-        outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
-    }
+        // Write the assignment grades
+        for (int i = 0; i < assignmentGrades.size(); i++) {
+            outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
+        }
 
 
-    // Write the project grades
-    for (int i = 0; i < projectGrades.size(); i++) {
-        outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
-    }
+        // Write the project grades
+        for (int i = 0; i < projectGrades.size(); i++) {
+            outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
+        }
 
-    // Write the final exam grade
-    for (int i = 0; i < examGrades.size(); i++) {
-        outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
-    }
+        // Write the final exam grade
+        for (int i = 0; i < examGrades.size(); i++) {
+            outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
+        }
 
-    outputFile.close();
-    std::cout << "Grades have been written to the file." << std::endl;
+        outputFile.close();
+        std::cout << "Grades have been written to the file." << std::endl;
 }
