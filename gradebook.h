@@ -10,6 +10,7 @@ private:
         std::string assignmentName;
         double assignmentGrade;
         double totalGrade;
+        std::string assignmentCategory;
     };
     std::string studentName;
     std::vector <Assignment> labGrades;
@@ -25,15 +26,15 @@ public:
 
     //pushback the value given into the vector of Lab grades
 
-    void setLabGrade(int gradeValue, int totalValue, std::string gradeName);
+    void setLabGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
 
     //pushback the value given into the vector of Assignment grades
 
-    void setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName);
+    void setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
 
     //pushback the value given into the vector of project grades
 
-    void setProjectGrade(int gradeValue, int totalValue, std::string gradeName);
+    void setProjectGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
 
     //sets the value of private Final exam
 
@@ -66,4 +67,6 @@ public:
     void changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal);
 
     void printCategory(int ifChoice);
+
+    void outputFile(std::string fileName);
 };
