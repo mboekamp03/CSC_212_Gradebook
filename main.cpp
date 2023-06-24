@@ -43,7 +43,7 @@ int main(int argc, char*argv[]) {
             student.setProjectGrade(grade, totalGrade, name, category);
         }
         else{
-            student.setFinalExamGrade(grade);
+            student.setExamGrade(grade, totalGrade, name, category);
         }
     }
 
@@ -56,25 +56,37 @@ int main(int argc, char*argv[]) {
         //get choice to proceed
         std::cin >> choice;
 
+        if (choice < 0 || choice > 7 ){
+            std::cout << "NOT A VALID OPTION!!!!!" << '\n';
+        }
 
-        if (choice == 1){
+        else if (choice == 1){
             catMenu();
             std::cin >> ifChoice;
             student.printCategory(ifChoice);
 
         }
+
         else if (choice == 2){
-            std::cout << "Final Exam Grade: " << student.getFinalExamGrade() << '\n';
-        }
-        else if (choice == 3){
             std::cout <<"Total Grade: " <<  student.getTotGrade() << '\n';
         }
+        else if (choice == 3){
+            std::cout << "Overall Grade: " << student.getOverallGrade() << '\n';
+        }
         else if (choice == 4){
+            catMenu();
+            std::cin >> ifChoice;
+
+            if (ifChoice == 1){
+                std::cout << student.set
+            }
+        }
+        else if (choice == 5){
             int newGrade;
             std::string gradeCat;
             std::string gradeName;
 
-            std::cout << "Please input the name of the category! (example: lab/ assignment / project) ";
+            std::cout << "Please input the name of the category! (example: lab/ assignment / project / exam ) ";
             std::cin >> gradeCat;
             std::cout << '\n' << "Input the Grade Name you would like to change. ";
             std::cin >> gradeName;
@@ -85,7 +97,7 @@ int main(int argc, char*argv[]) {
 
             changesMade = true;
         }
-        else if (choice == 5){
+        else if (choice == 6){
             std::string gradeCat;
             std::string gradeName;
             std::cout << "Please input the name of the category! (example: lab/ assignment / project) ";
@@ -94,8 +106,23 @@ int main(int argc, char*argv[]) {
             std::cin >> gradeName;
             std::cout << student.getIndividualGrade(gradeCat, gradeName) << '\n';
         }
-        else if (choice < 0 || choice > 5 ){
-            std::cout << "NOT A VALID OPTION!!!!!" << '\n';
+
+        else if (choice == 7){
+            int newGrade;
+            std::string gradeCat;
+            std::string gradeName;
+
+            std::cout << "Please input the name of the category! (example: lab/ assignment / project / exam ) ";
+            std::cin >> gradeCat;
+            std::cout << '\n' << "Input the Grade Name you would like to change. ";
+            std::cin >> gradeName;
+            std::cout << '\n' << "Input the New Grade. ";
+            std::cin >> newGrade;
+            std::cout << '\n';
+
+            student.changetotalGrade(gradeCat, gradeName, newGrade);
+
+            changesMade = true;
         }
 
     }
@@ -114,10 +141,12 @@ int main(int argc, char*argv[]) {
 void menu(){
     std::cout << "Choose a number to view categories or make changes!" << '\n';
     std::cout << "1: View Category" << '\n';
-    std::cout << "2: View Final Exam" << '\n';
-    std::cout << "3: View Total Grade" << '\n';
-    std::cout << "4: Change a Grade" << '\n';
-    std::cout << "5. View Individual Grade" << '\n';
+    std::cout << "2: View Total Grade" << '\n';
+    std::cout << "3: View Overall Grade" << '\n';
+    std::cout << "4: View Total Category Grade" << '\n';
+    std::cout << "5: Change a Grade" << '\n';
+    std::cout << "6: View Individual Grade" << '\n';
+    std::cout << "7: Change the Total Grade" << '\n';
     std::cout << "0: To Quit" << '\n';
 }
 
@@ -126,4 +155,5 @@ void catMenu(){
     std::cout << "1: LABS" << '\n';
     std::cout << "2: ASSIGNMENTS" << '\n';
     std::cout << "3: PROJECTS" << '\n';
+    std::cout << "4: EXAMS" << '\n';
 }
