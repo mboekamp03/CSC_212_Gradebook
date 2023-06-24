@@ -124,13 +124,13 @@ void Grade::setStudentName(std::string name){
 void Grade::setTotGrade(){
 
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
-    int sum = 0;
-    int totalPoints = 0;
+    double sum = 0;
+    double totalPoints = 0;
 
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < assignmentGrades.size(); i++){
-        sum = assignmentGrades[i].assignmentGrade + sum;
+        sum = assignmentGrades[i].assignmentGrade + sum; 
         totalPoints = totalPoints + assignmentGrades[i].totalGrade;
     }
 
@@ -140,7 +140,6 @@ void Grade::setTotGrade(){
         //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
         totalPoints = totalPoints + labGrades[i].totalGrade;
-
     }
 
 
@@ -164,6 +163,7 @@ void Grade::setTotGrade(){
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
+    std::cout << "After " << Total << std::endl;
     Total= Total * 100;
 
     this->totGrade = Total;
@@ -173,8 +173,8 @@ void Grade::setTotGrade(){
 void Grade::setOverallGrade(){
 
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
-    int sum = 0;
-    int totalPoints = 1000;
+    double sum = 0;
+    double totalPoints = 1000;
 
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
@@ -203,7 +203,6 @@ void Grade::setOverallGrade(){
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
-    Total= Total * 100;
 
     this->overallGrade = Total;
     //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
