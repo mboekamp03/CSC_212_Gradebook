@@ -98,39 +98,36 @@ void Grade::setTotGrade(){
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i<assignmentGrades.size(); i++){
         sum = assignmentGrades[i].assignmentGrade + sum;
-
+        totalPoints = totalPoints + assignmentGrades[i].totalGrade;
     }
-    totalPoints = assignmentGrades.size() * 50;
 
 
     //Loops through labs vector, converts the percent to its point weight, and adds it to the sum, then adds total possible points to totalPoints.
-    for(int i = 1;i <= labGrades.size(); i++){
+    for(int i = 1; i <= labGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
+        totalPoints = totalPoints + labGrades[i].totalGrade;
 
     }
-    totalPoints = totalPoints + labGrades.size() * 5;
 
 
     //Converts the project grade percent to its weight in points, adds it to the sum and total possible points to totalPoints
     for(int i = 1;i <= projectGrades.size(); i++){
         //labGrades[i] = 5;
         sum = sum + projectGrades[i].assignmentGrade;
+        totalPoints = totalPoints + projectGrades[i].totalGrade;
     }
 
-    sum = sum + examGrade;
+    for(int i = 1;i <= examGrades.size(); i++){
+        //labGrades[i] = 5;
+        sum = sum + examGrades[i].assignmentGrade;
+        totalPoints = totalPoints + examGrades[i].totalGrade;
+    }
 
-    totalPoints += 100;
 
     //std::cout<< sum << " _ " << totalPoints <<std::endl;
     //Adds full exam and full project values to total number of points
 
-    if (projectGrades.size() == 2) {
-        totalPoints += 500;
-    }
-    else if (projectGrades.size() == 1) {
-        totalPoints += 150;
-    }
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
