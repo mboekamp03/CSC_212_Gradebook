@@ -51,11 +51,27 @@ void Grade::setExamGrade(double gradeValue, double totalValue, std::string grade
 std::string Grade::getStudentName(){
     return this->studentName;
 }
+
+void Grade::getTotLab(){
+    return this->totLab;
+}
+
+void Grade::getTotAssignment(){
+    return this->totAssignment;
+}
+
+void Grade::getTotPorject(){
+    return this->totProject;
+}
+
+void Grade::getTotExam(){
+    return this->totExam;
+}
+
 //uses private vector to get total lab grades using vec.size()
 void Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
-    int sum = 0;
-    int totLab = 0;
+    double sum = 0;
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < labGrades.size(); i++){
@@ -63,28 +79,46 @@ void Grade::setTotLab(){
         sum = currentGrade + sum;
     }
 
-    totLab = sum;
-    this->totLab = totLab;
+    this->totLab = sum;
 }
 
 //uses private vector to get total Assignment grades using vec.size()
 void Grade::setTotAssignment(){
-    int sum = 0;
-    int totAssignment = 0;
-
+    double sum = 0;
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < assignmentGrades.size(); i++){
         sum = sum + assignmentGrades[i].assignmentGrade;
     }
 
-    totAssignment = sum;
-    this->totAssignment = totAssignment;
+    this->totAssignment = sum;
+}
+
+void Grade::setTotProject(){
+    double sum = 0;
+
+    for(int i = 0; i < projectGrades.size(); i++){
+        sum = sum + projectGrades[i].assignmentGrade;
+    }
+
+    this->totProject = sum;
+}
+
+void Grade::setTotExam(){
+    double sum = 0;
+
+    for(int i = 0; i < examGrades.size(); i++){
+        sum = sum + examGrades[i].assignmentGrade;
+    }
+
+    this->totExam = sum;
 }
 
 void Grade::setStudentName(std::string name){
     this->studentName = name;
 }
+
+
 
 //uses private totlab and totAssignment along with vector for project grades
 void Grade::setTotGrade(){
