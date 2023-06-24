@@ -37,6 +37,7 @@ void Grade::setProjectGrade(int gradeValue, int totalValue, std::string gradeNam
 
 }
 
+//sets the value of private Final exam
 void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat) {
     //takes the grade value uses it to do examGrades.pushback(gradeValue)
     Assignment exam;
@@ -47,6 +48,7 @@ void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, 
     examGrades.push_back(exam);
 
 }
+
 
 std::string Grade::getStudentName(){
     return this->studentName;
@@ -61,6 +63,7 @@ void Grade::setTotLab(){
     for(int i = 0; i < labGrades.size(); i++){
         int currentGrade = labGrades[i].assignmentGrade;
         sum = currentGrade + sum;
+
     }
 
     totLab = sum;
@@ -226,6 +229,7 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
     }
 }
 
+
 void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal)  {
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         for (int i = 0; i < labGrades.size(); i++) {
@@ -262,58 +266,78 @@ void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, d
 
 void Grade::printCategory(int ifChoice) {
     if(ifChoice == 1) {
-        for(int i = 0; i < labGrades.size(); i++) {
-            std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
-            std::cout<< " " <<std::endl;
+        if(!labGrades.empty()) {
+            for (int i = 0; i < labGrades.size(); i++) {
+                std::cout << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
+                std::cout << " " << std::endl;
+            }
+        }
+        else{
+            std::cout << "There are no lab grades available! " << '\n';
         }
     }
     else if(ifChoice == 2) {
-        for(int i = 0; i < assignmentGrades.size(); i++) {
-            std::cout<< assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << std::endl;
-            std::cout<< " " <<std::endl;
+        if (!assignmentGrades.empty()) {
+            for (int i = 0; i < assignmentGrades.size(); i++) {
+                std::cout << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade
+                          << std::endl;
+                std::cout << " " << std::endl;
+            }
+        }
+        else{
+            std::cout << "There are no assignment grades available! " << '\n';
         }
     }
     else if(ifChoice == 3) {
-        for(int i = 0; i < projectGrades.size(); i++) {
-            std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
-            std::cout<< " " <<std::endl;
+        if (!projectGrades.empty()) {
+            for (int i = 0; i < projectGrades.size(); i++) {
+                std::cout << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
+                std::cout << " " << std::endl;
+            }
+        }
+        else {
+            std::cout << "There are no project grades available! " << '\n';
         }
     }
-    else if(ifChoice == 4) {
+    else if (ifChoice == 4){
         for(int i = 0; i < examGrades.size(); i++) {
             std::cout<< examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << std::endl;
             std::cout<< " " <<std::endl;
         }
+
+    }
+    else{
+        std::cout << "NOT A VALID OPTION" << '\n';
     }
 }
 
 void Grade::outputFile(std::string fileName) {
     std::ofstream outputFile(fileName);
 
-        // Write the student name
-        outputFile << studentName << std::endl;
+    // Write the student name
+    outputFile << studentName << std::endl;
 
-        // Write the lab grades
-        for (int i = 0; i < labGrades.size(); i++) {
-            outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
-        }
+    // Write the lab grades
+    for (int i = 0; i < labGrades.size(); i++) {
+        outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
+    }
 
-        // Write the assignment grades
-        for (int i = 0; i < assignmentGrades.size(); i++) {
-            outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
-        }
+    // Write the assignment grades
+    for (int i = 0; i < assignmentGrades.size(); i++) {
+        outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
+    }
 
 
-        // Write the project grades
-        for (int i = 0; i < projectGrades.size(); i++) {
-            outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
-        }
+    // Write the project grades
+    for (int i = 0; i < projectGrades.size(); i++) {
+        outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
+    }
 
-        // Write the final exam grade
-        for (int i = 0; i < examGrades.size(); i++) {
-            outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
-        }
+    // Write the final exam grade
+    for (int i = 0; i < examGrades.size(); i++) {
+        outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
+    }
 
-        outputFile.close();
-        std::cout << "Grades have been written to the file." << std::endl;
+    outputFile.close();
+    std::cout << "Grades have been written to the file." << std::endl;
 }
