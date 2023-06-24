@@ -50,13 +50,8 @@ public:
 
     std::string getStudentName();
 
-    void getTotLab();
+    double getWhateverTotGrade(int ifChoice);
 
-    void getTotAssignment();
-
-    void getTotProject();
-
-    void getTotExam();
     //uses private vector to get total lab grades using vec.size()
 
     void setStudentName(std::string name);
