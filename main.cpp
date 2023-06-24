@@ -2,7 +2,6 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include "gradebook.h"
 
 void menu();
@@ -47,8 +46,6 @@ int main(int argc, char*argv[]) {
         }
     }
 
-    student.setTotGrade();
-
     while (choice != 0){
 
         std::cout << student.getStudentName() << '\n';
@@ -78,9 +75,10 @@ int main(int argc, char*argv[]) {
             std::cin >> ifChoice;
             if (ifChoice > 4 || ifChoice < 0){
                 std::cout << "NOT A VALID OPTION!! CHOOSE AGAIN!! " << '\n';
+                std::cin >> ifChoice;
             }
 
-            else if (ifChoice == 1) {
+            if (ifChoice == 1) {
                 std::cout << student.getTotLab() << '\n';
             }
             else if (ifChoice == 2) {
