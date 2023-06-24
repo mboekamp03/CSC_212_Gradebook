@@ -44,9 +44,7 @@ public:
 
     void setExamGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat);
 
-
     //gets final exam grade
-
 
     std::string getStudentName();
 
