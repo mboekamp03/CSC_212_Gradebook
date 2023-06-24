@@ -80,9 +80,20 @@ int main(int argc, char*argv[]) {
                 std::cout << "NOT A VALID OPTION!! CHOOSE AGAIN!! " << '\n';
                 std::cin >> ifChoice;
             }
-            else{
-                std::cout << student.getWhateverTotGrade(ifChoice) << '\n';
+
+            if (ifChoice == 1) {
+                std::cout << student.getTotLab() << '\n';
             }
+            else if (ifChoice == 2) {
+                std::cout << student.getTotAssignment() << '\n';
+            }
+            else if (ifChoice == 2) {
+                std::cout << student.getTotProject() << '\n';
+            }
+            else if (ifChoice == 2) {
+                std::cout << student.getTotExam() << '\n';
+            }
+
         }
         else if (choice == 5){
             int newGrade;
