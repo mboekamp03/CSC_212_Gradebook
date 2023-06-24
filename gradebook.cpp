@@ -48,10 +48,6 @@ void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, 
 
 }
 
-double Grade::getFinalExamGrade(){
-    return this->examGrade;
-}
-
 std::string Grade::getStudentName(){
     return this->studentName;
 }
