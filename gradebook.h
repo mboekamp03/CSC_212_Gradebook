@@ -22,24 +22,25 @@ private:
     double totLab;
     double totAssignment;
     double totGrade;
+    double overallGrade;
 
 public:
 
     //pushback the value given into the vector of Lab grades
 
-    void setLabGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
+    void setLabGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat);
 
     //pushback the value given into the vector of Assignment grades
 
-    void setAssignmentGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
+    void setAssignmentGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat);
 
     //pushback the value given into the vector of project grades
 
-    void setProjectGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
+    void setProjectGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat);
 
     //sets the value of private Final exam
 
-    void setExamGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat);
+    void setExamGrade(double gradeValue, double totalValue, std::string gradeName, std::string gradeCat);
 
 
     //gets final exam grade
@@ -60,7 +61,11 @@ public:
 
     void setTotGrade();
 
+    void setOverallGrade();
+
     double getTotGrade();
+
+    double getOverallGrade();
 
     double getIndividualGrade(std::string gradeCategory, std::string gradeName);
 
