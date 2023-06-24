@@ -52,20 +52,21 @@ std::string Grade::getStudentName(){
     return this->studentName;
 }
 
-void Grade::getTotLab(){
-    return this->totLab;
-}
+double Grade::getWhateverTotGrade(int ifChoice){
+    if (ifChoice == 1){
+        return this->totLab;
+    }
+    else if (ifChoice == 2){
+        return this->totAssignment;
 
-void Grade::getTotAssignment(){
-    return this->totAssignment;
-}
+    }
+    else if (ifChoice == 3){
+        return this->totProject;
+    }
+    else{
+        return this->totExam;
+    }
 
-void Grade::getTotPorject(){
-    return this->totProject;
-}
-
-void Grade::getTotExam(){
-    return this->totExam;
 }
 
 //uses private vector to get total lab grades using vec.size()
@@ -364,30 +365,30 @@ void Grade::printCategory(int ifChoice) {
 void Grade::outputFile(std::string fileName) {
     std::ofstream outputFile(fileName);
 
-        // Write the student name
-        outputFile << studentName << std::endl;
+    // Write the student name
+    outputFile << studentName << std::endl;
 
-        // Write the lab grades
-        for (int i = 0; i < labGrades.size(); i++) {
-            outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
-        }
+    // Write the lab grades
+    for (int i = 0; i < labGrades.size(); i++) {
+        outputFile << labGrades[i].assignmentCategory << " " << labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << " " << labGrades[i].totalGrade << std::endl;
+    }
 
-        // Write the assignment grades
-        for (int i = 0; i < assignmentGrades.size(); i++) {
-            outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
-        }
+    // Write the assignment grades
+    for (int i = 0; i < assignmentGrades.size(); i++) {
+        outputFile << assignmentGrades[i].assignmentCategory << " " << assignmentGrades[i].assignmentName << " " << assignmentGrades[i].assignmentGrade << " " << assignmentGrades[i].totalGrade << std::endl;
+    }
 
 
-        // Write the project grades
-        for (int i = 0; i < projectGrades.size(); i++) {
-            outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
-        }
+    // Write the project grades
+    for (int i = 0; i < projectGrades.size(); i++) {
+        outputFile << projectGrades[i].assignmentCategory << " " << projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << " " << projectGrades[i].totalGrade << std::endl;
+    }
 
-        // Write the final exam grade
-        for (int i = 0; i < examGrades.size(); i++) {
-            outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
-        }
+    // Write the final exam grade
+    for (int i = 0; i < examGrades.size(); i++) {
+        outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
+    }
 
-        outputFile.close();
-        std::cout << "Grades have been written to the file." << std::endl;
+    outputFile.close();
+    std::cout << "Grades have been written to the file." << std::endl;
 }
