@@ -1,16 +1,16 @@
 John Doe
-Lab Lab1 25
-Lab Lab2 20
-Lab Lab3 25
-Lab Lab4 0
-Lab Lab5 25
-Lab Lab6 25
-Lab Lab7 15
-Lab Lab8 20
-Assignment Assignment1 50
-Assignment Assignment2 20
-Assignment Assignment3 40
-Assignment Assignment4 50
-Project Project1 150
-Project Project2 350
-Exam Final 100
+Lab Lab1 25 25
+Lab Lab2 20 25
+Lab Lab3 25 25
+Lab Lab4 0 25
+Lab Lab5 25 25
+Lab Lab6 25 25
+Lab Lab7 15 25
+Lab Lab8 20 25
+Assignment Assignment1 40 50
+Assignment Assignment2 20 50
+Assignment Assignment3 40 50
+Assignment Assignment4 50 50
+Project Project1 150 150
+Project Project2 350 350
+Exam Final 100 100
