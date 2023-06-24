@@ -53,18 +53,22 @@ std::string Grade::getStudentName(){
 }
 
 double Grade::getTotLab(){
+    setTotLab();
     return this->totLab;
 }
 
 double Grade::getTotAssignment(){
+    setTotAssignment();
     return this->totAssignment;
 }
 
 double Grade::getTotProject(){
+    setTotProject();
     return this->totProject;
 }
 
 double Grade::getTotExam(){
+    setTotExam();
     return this->totExam;
 }
 
@@ -72,46 +76,59 @@ double Grade::getTotExam(){
 void Grade::setTotLab(){
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     double sum = 0;
+    double totalGrade = 0;
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < labGrades.size(); i++){
-        int currentGrade = labGrades[i].assignmentGrade;
-        sum = currentGrade + sum;
+        sum = labGrades[i].assignmentGrade + sum;
+        totalGrade = totalGrade + labGrades[i].totalGrade;
     }
-
-    this->totLab = sum;
+    double grade = (sum / totalGrade) * 100;
+    
+    this->totLab = grade;
 }
 
 //uses private vector to get total Assignment grades using vec.size()
 void Grade::setTotAssignment(){
     double sum = 0;
+    double totalGrade = 0;
 
     //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
     for(int i = 0; i < assignmentGrades.size(); i++){
         sum = sum + assignmentGrades[i].assignmentGrade;
+        totalGrade = totalGrade + assignmentGrades[i].totalGrade;
     }
 
-    this->totAssignment = sum;
+    double grade = (sum / totalGrade) * 100;
+
+    this->totAssignment = grade;
 }
 
 void Grade::setTotProject(){
     double sum = 0;
+    double totalGrade = 0;
 
     for(int i = 0; i < projectGrades.size(); i++){
         sum = sum + projectGrades[i].assignmentGrade;
+        totalGrade = totalGrade + projectGrades[i].totalGrade;
     }
 
-    this->totProject = sum;
+    double grade = (sum / totalGrade) * 100;
+
+    this->totProject = grade;
 }
 
 void Grade::setTotExam(){
     double sum = 0;
+    double totalGrade = 0;
 
     for(int i = 0; i < examGrades.size(); i++){
         sum = sum + examGrades[i].assignmentGrade;
+        totalGrade = totalGrade + examGrades[i].totalGrade;
     }
+    double grade = (sum / totalGrade) * 100;
 
-    this->totExam = sum;
+    this->totExam = grade;
 }
 
 void Grade::setStudentName(std::string name){
@@ -163,7 +180,6 @@ void Grade::setTotGrade(){
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
-    std::cout << "After " << Total << std::endl;
     Total= Total * 100;
 
     this->totGrade = Total;
@@ -203,16 +219,17 @@ void Grade::setOverallGrade(){
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
-
+    Total = Total * 100;
     this->overallGrade = Total;
-    //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
 }
 
 double Grade::getTotGrade(){
+    setTotGrade();
     return this->totGrade;
 }
 
 double Grade::getOverallGrade(){
+    setOverallGrade();
     return this->overallGrade;
 }
 
