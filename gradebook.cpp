@@ -296,9 +296,6 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
             }
         }
     }
-    else {
-        examGrade = newGrade;
-    }
 }
 
 void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal)  {
