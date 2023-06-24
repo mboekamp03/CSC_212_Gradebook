@@ -37,11 +37,17 @@ void Grade::setProjectGrade(int gradeValue, int totalValue, std::string gradeNam
 
 }
 
-//sets the value of private Final exam
-void Grade::setFinalExamGrade(int gradeValue){
-    //uses this keyword to set private value of finalExam to gradeValue
-    this->examGrade = gradeValue;
+void Grade::setExamGrade(int gradeValue, int totalValue, std::string gradeName, std::string gradeCat) {
+    //takes the grade value uses it to do examGrades.pushback(gradeValue)
+    Assignment exam;
+    exam.assignmentGrade = gradeValue;
+    exam.assignmentName = gradeName;
+    exam.totalGrade = totalValue;
+    exam.assignmentCategory = gradeCat;
+    examGrades.push_back(exam);
+
 }
+
 double Grade::getFinalExamGrade(){
     return this->examGrade;
 }
@@ -59,7 +65,6 @@ void Grade::setTotLab(){
     for(int i = 0; i < labGrades.size(); i++){
         int currentGrade = labGrades[i].assignmentGrade;
         sum = currentGrade + sum;
-
     }
 
     totLab = sum;
@@ -174,6 +179,15 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
             i++;
         }
     }
+    else if (gradeCategory == "Exam" || gradeCategory == "exam" ) {
+        while (found == false && i < examGrades.size()) {
+            if (examGrades[i].assignmentName == gradeName) {
+                foundGrade = examGrades[i].assignmentGrade;
+                found = true;
+            }
+            i++;
+        }
+    }
     if (found == false) {
         return 0;
     }
@@ -204,6 +218,13 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
             }
         }
     }
+    else if (gradeCategory == "Exam" || gradeCategory == "exam" ) {
+        for (int i = 0; i < examGrades.size(); i++) {
+            if (examGrades[i].assignmentName == gradeName) {
+                examGrades[i].assignmentGrade = newGrade;
+            }
+        }
+    }
     else {
         examGrade = newGrade;
     }
@@ -231,6 +252,13 @@ void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, d
             }
         }
     }
+    else if (gradeCategory == "Exam" || gradeCategory == "exam" ) {
+        for (int i = 0; i < examGrades.size(); i++) {
+            if (examGrades[i].assignmentName == gradeName) {
+                examGrades[i].assignmentGrade = newTotal;
+            }
+        }
+    }
     else {
         examGrade = newTotal;
     }
@@ -252,6 +280,12 @@ void Grade::printCategory(int ifChoice) {
     else if(ifChoice == 3) {
         for(int i = 0; i < projectGrades.size(); i++) {
             std::cout<< projectGrades[i].assignmentName << " " << projectGrades[i].assignmentGrade << std::endl;
+            std::cout<< " " <<std::endl;
+        }
+    }
+    else if(ifChoice == 4) {
+        for(int i = 0; i < examGrades.size(); i++) {
+            std::cout<< examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << std::endl;
             std::cout<< " " <<std::endl;
         }
     }
@@ -280,7 +314,9 @@ void Grade::outputFile(std::string fileName) {
         }
 
         // Write the final exam grade
-        outputFile << examGrade << std::endl;
+        for (int i = 0; i < examGrades.size(); i++) {
+            outputFile << examGrades[i].assignmentCategory << " " << examGrades[i].assignmentName << " " << examGrades[i].assignmentGrade << " " << examGrades[i].totalGrade << std::endl;
+        }
 
         outputFile.close();
         std::cout << "Grades have been written to the file." << std::endl;
