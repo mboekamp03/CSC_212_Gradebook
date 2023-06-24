@@ -78,19 +78,18 @@ int main(int argc, char*argv[]) {
             std::cin >> ifChoice;
             if (ifChoice > 4 || ifChoice < 0){
                 std::cout << "NOT A VALID OPTION!! CHOOSE AGAIN!! " << '\n';
-                std::cin >> ifChoice;
             }
 
-            if (ifChoice == 1) {
+            else if (ifChoice == 1) {
                 std::cout << student.getTotLab() << '\n';
             }
             else if (ifChoice == 2) {
                 std::cout << student.getTotAssignment() << '\n';
             }
-            else if (ifChoice == 2) {
+            else if (ifChoice == 3) {
                 std::cout << student.getTotProject() << '\n';
             }
-            else if (ifChoice == 2) {
+            else if (ifChoice == 4) {
                 std::cout << student.getTotExam() << '\n';
             }
 
