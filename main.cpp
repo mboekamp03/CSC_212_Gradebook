@@ -76,9 +76,12 @@ int main(int argc, char*argv[]) {
         else if (choice == 4){
             catMenu();
             std::cin >> ifChoice;
-
-            if (ifChoice == 1){
-                std::cout << student.set
+            if (ifChoice > 4 || ifChoice < 0){
+                std::cout << "NOT A VALID OPTION!! CHOOSE AGAIN!! " << '\n';
+                std::cin >> ifChoice;
+            }
+            else{
+                std::cout << student.getWhateverTotGrade(ifChoice) << '\n';
             }
         }
         else if (choice == 5){
