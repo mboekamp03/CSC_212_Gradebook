@@ -1,4 +1,3 @@
-// Grade.cpp
 #include "gradebook.h"
 #include <fstream>
 
@@ -48,6 +47,7 @@ void Grade::setExamGrade(double gradeValue, double totalValue, std::string grade
 
 }
 
+// Getters
 std::string Grade::getStudentName(){
     return this->studentName;
 }
@@ -105,6 +105,9 @@ void Grade::setTotAssignment(){
 }
 
 void Grade::setTotProject(){
+    // Calculates individual category grade for exams
+    // Intializes variables to 0
+    // Loops through the for loop to add to each variable
     double sum = 0;
     double totalGrade = 0;
 
@@ -112,13 +115,16 @@ void Grade::setTotProject(){
         sum = sum + projectGrades[i].assignmentGrade;
         totalGrade = totalGrade + projectGrades[i].totalGrade;
     }
-
+    // Calculates   
     double grade = (sum / totalGrade) * 100;
-
+    // Sets the total exam grade
     this->totProject = grade;
 }
 
 void Grade::setTotExam(){
+    // Calculates individual category grade for exams
+    // Intializes variables to 0
+    // Loops through the for loop to add to each variable
     double sum = 0;
     double totalGrade = 0;
 
@@ -126,20 +132,18 @@ void Grade::setTotExam(){
         sum = sum + examGrades[i].assignmentGrade;
         totalGrade = totalGrade + examGrades[i].totalGrade;
     }
+    // Calculates
     double grade = (sum / totalGrade) * 100;
-
+    // Sets the total exam grade
     this->totExam = grade;
 }
 
 void Grade::setStudentName(std::string name){
+    // Sets student 
     this->studentName = name;
 }
 
-
-
-//uses private totlab and totAssignment along with vector for project grades
 void Grade::setTotGrade(){
-
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     double sum = 0;
     double totalPoints = 0;
@@ -152,68 +156,55 @@ void Grade::setTotGrade(){
     }
 
 
-    //Loops through labs vector, converts the percent to its point weight, and adds it to the sum, then adds total possible points to totalPoints.
+    //Loops through labs vector, adds it to the sum, then adds total possible points to totalPoints.
     for(int i = 0; i < labGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
         totalPoints = totalPoints + labGrades[i].totalGrade;
     }
 
 
-    //Converts the project grade percent to its weight in points, adds it to the sum and total possible points to totalPoints
+    //Loops through project vector adds it to the sum and total possible points to totalPoints
     for(int i = 0; i < projectGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + projectGrades[i].assignmentGrade;
         totalPoints = totalPoints + projectGrades[i].totalGrade;
     }
 
     for(int i = 0; i < examGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + examGrades[i].assignmentGrade;
         totalPoints = totalPoints + examGrades[i].totalGrade;
     }
-
-
-    //std::cout<< sum << " _ " << totalPoints <<std::endl;
-    //Adds full exam and full project values to total number of points
-
 
     //Calculates a final percentage grade using sum and totalPoints, couts the grade.
     float Total = (float)sum/totalPoints;
     Total= Total * 100;
 
     this->totGrade = Total;
-    //std::cout<<"Your Grade is "<< Total <<" %"<<std::endl;
 }
 
 void Grade::setOverallGrade(){
-
     //Initialize sum and totalPoints, which will store the total points earned and total points possible respectively
     double sum = 0;
     double totalPoints = 1000;
 
 
-    //Loops through assignment vector, adds the points to sum, and total possible points to totalPoints after the loop ends
+    //Loops through assignment vector, adds the points to sum
     for(int i = 0; i < assignmentGrades.size(); i++){
         sum = assignmentGrades[i].assignmentGrade + sum;
     }
 
 
-    //Loops through labs vector, converts the percent to its point weight, and adds it to the sum, then adds total possible points to totalPoints.
+    //Loops through labs vector
     for(int i = 0; i < labGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + labGrades[i].assignmentGrade;
     }
 
 
-    //Converts the project grade percent to its weight in points, adds it to the sum and total possible points to totalPoints
+    //Loops through the project vector
     for(int i = 0; i < projectGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + projectGrades[i].assignmentGrade;
     }
 
     for(int i = 0; i < examGrades.size(); i++){
-        //labGrades[i] = 5;
         sum = sum + examGrades[i].assignmentGrade;
     }
 
@@ -238,6 +229,8 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
     int i = 0;
     double foundGrade = 0;
 
+    // Checks to find which category has been requested and then moves through the vector for that category
+    // If found, found is set to true and the grade is returned
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         while (found == false && i < labGrades.size()) {
             if (labGrades[i].assignmentName == gradeName) {
@@ -283,6 +276,9 @@ double Grade::getIndividualGrade(std::string gradeCategory, std::string gradeNam
 }
 
 void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double newGrade)  {
+    // For each categopry, it loops through the respective vector until the grade that you want to change is found
+    // Sets the grade to the new grade 
+    // This changes it in the vector and writes the output to the file after the program has been ended
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         for (int i = 0; i < labGrades.size(); i++) {
             if (labGrades[i].assignmentName == gradeName) {
@@ -317,6 +313,9 @@ void Grade::changeGrade(std::string gradeCategory, std::string gradeName, double
 }
 
 void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, double newTotal)  {
+    // For each categopry, it loops through the respective vector until the grade that you want to change is found
+    // Sets the total grade to the new total grade 
+    // This changes it in the vector and writes the output to the file after the program has been ended
     if (gradeCategory == "Lab" || gradeCategory == "lab" ) {
         for (int i = 0; i < labGrades.size(); i++) {
             if (labGrades[i].assignmentName == gradeName) {
@@ -348,6 +347,8 @@ void Grade::changetotalGrade(std::string gradeCategory, std::string gradeName, d
 }
 
 void Grade::printCategory(int ifChoice) {
+    // Determines choice and outputs the correct information
+    // Outputs all the deliverables in a category
     if(ifChoice == 1) {
         for(int i = 0; i < labGrades.size(); i++) {
             std::cout<< labGrades[i].assignmentName << " " << labGrades[i].assignmentGrade << std::endl;
