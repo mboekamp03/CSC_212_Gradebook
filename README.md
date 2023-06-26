@@ -7,7 +7,7 @@ The task for this project was to create a gradebook for the CSC212 course. The g
 
 Planning
 ---------------------
-We met several times throughout the duration of the project to discuss implementation and to bounce ideas off of one and other. Our early meetings were centered around discussing the basic structure of our code and developing good pseudocode to guide us through the rest of the process. The later meetings involved coding, implementing new elements we previously had not thought of, and debugging.
+We met several times throughout the duration of the project to discuss implementation and to bounce ideas off of one another. Our early meetings were centered around discussing the basic structure of our code and developing good pseudocode to guide us through the rest of the process. The later meetings involved coding, implementing new elements we previously had not thought of, and debugging.
 
 Instructions
 ---------------------
