@@ -209,3 +209,13 @@ grade1.txt
 <img width="1920" alt="Screenshot 2023-06-26 at 7 22 58 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/b5a76517-66d1-4db4-893d-019ca3d939f2">
 <img width="1920" alt="Screenshot 2023-06-26 at 7 23 58 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/bf87e3de-6c57-4a48-b44b-29637bf66ffb">
 
+grade2.txt
+---------------------
+<img width="1920" alt="Screenshot 2023-06-26 at 7 28 11 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/7461109c-88da-4a7e-a93f-0ac735f73c1f">
+<img width="1920" alt="Screenshot 2023-06-26 at 7 29 30 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/093d548d-e9a2-4d20-8677-de81c7f22462">
+
+
+grade3.txt
+---------------------
+
+
