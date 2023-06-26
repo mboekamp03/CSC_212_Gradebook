@@ -11,5 +11,5 @@ We met several times throughout the duration of the project to discuss implement
 
 Instructions
 ---------------------
-To compile our code, use the following command: 
+To compile our code, use the following command: "\n"
 g++ main.cpp gradebook.cpp -o program
