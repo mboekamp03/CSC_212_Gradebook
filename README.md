@@ -102,3 +102,22 @@ An example of the output is below:
 1
 77.5
 ```
+5
+---------------------
+If you enter 4 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
+
+The program will then prompt you to enter a deliverable name. These must be formatted like Lab1, Assignment1, Project1, and Final as this is how they appear in the .txt file.
+
+For labs, the deliverables are named Lab1, Lab2, Lab3, Lab4, Lab5, Lab6, Lab7, and Lab8
+
+For assignments, the deliverables are named Assignment1, Assignment2, Assignment3, and Assignment4
+
+For projects, the deliverables are named Project1 and Project2
+
+For the exam, the deliverable is named Final
+
+An example of the output is below: 
+```
+1
+77.5
+```
