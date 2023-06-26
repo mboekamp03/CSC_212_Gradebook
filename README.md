@@ -123,7 +123,7 @@ For the exam, the deliverable is named Final
 
 From here, the program will prompt you to enter a new grade to replace the existing one.
 
-An example of this using labs, Lab1, and 10 follows:
+An example of this using lab, Lab1, and 10 follows:
 ```
 Please input the name of the category! (example: lab/ assignment / project / exam ) lab
 
@@ -133,16 +133,26 @@ Input the New Grade. 10
 ```
 The changes made will appear on the output file after the program is closed.
 
-4
+6
 ---------------------
-If you enter 4 when prompted for a choice, you will open a menu to choose a category. The menu opened is the same as above and you will be prompted for another choice.
+If you enter 6 when prompted for a choice, you will be prompted to select an category. This can be either uppercase or lowercase.
 
-Once again, You can enter 1 to view lab grades, 2 to view assignment grades, 3 to view project grades, and 4 to view exam grades.
+The program will then prompt you to enter a deliverable name. These must be formatted like Lab1, Assignment1, Project1, and Final as this is how they appear in the .txt file.
 
-If you choose 1, the terminal will look like the following:
+For labs, the deliverables are named Lab1, Lab2, Lab3, Lab4, Lab5, Lab6, Lab7, and Lab8
 
-An example of the output is below: 
+For assignments, the deliverables are named Assignment1, Assignment2, Assignment3, and Assignment4
+
+For projects, the deliverables are named Project1 and Project2
+
+For the exam, the deliverable is named Final
+
+From here, the program will ouput the grade of that assignment
+
+An example of this using assignment and Assignment1 follows:
 ```
-1
-77.5
+Please input the name of the category! (example: lab/ assignment / project) assignment
+
+Input the Grade Name you would like to see. Assignment1
+40
 ```
