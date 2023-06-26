@@ -12,10 +12,23 @@ We met several times throughout the duration of the project to discuss implement
 Instructions
 ---------------------
 To compile our code, use the following command in the terminal:
-```ruby
+```
 g++ main.cpp gradebook.cpp -o program
 ```
 To run the program after compiling, use the following command in the terminal with <file_name> replaced with the name of the file you wish to run: 
-```ruby
+```
 ./program <file_name>.txt 
+```
+After running this command in the termina, you will see the following text appear in it:
+```
+John Doe
+Choose a number to view categories or make changes!
+1: View Category
+2: View Total Grade
+3: View Overall Grade
+4: View Total Category Grade
+5: Change a Grade
+6: View Individual Grade
+7: Change the Total Grade
+0: To Quit
 ```
