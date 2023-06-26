@@ -186,7 +186,7 @@ The changes made will appear on the output file after the program is closed.
 
 0
 ---------------------
-If you enter 0 when prompted for a choice, you will exit the program
+If you enter 0 when prompted for a choice, you will exit the program.
 
 If you make changes, those will be written to the input file once the program is exitted.
 
