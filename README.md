@@ -126,3 +126,4 @@ Input the Grade Name you would like to change. Lab1
 
 Input the New Grade. 10
 ```
+The changes made will appear on the output file after the program is closed.
