@@ -34,6 +34,10 @@ Choose a number to view categories or make changes!
 ```
 Once this appears, enter the number which corresponds to your desire output.
 
+Instructions for Choices
+---------------------
+1
+---------------------
 If you enter 1 when prompted for a choice, you will open another menu to choose a category:
 ```
 Choose a number to choose a category!
