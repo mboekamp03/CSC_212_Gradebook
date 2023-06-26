@@ -156,3 +156,48 @@ Please input the name of the category! (example: lab/ assignment / project) assi
 Input the Grade Name you would like to see. Assignment1
 40
 ```
+
+7
+---------------------
+If you enter 57when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
+
+The program will then prompt you to enter a deliverable name. These must be formatted like Lab1, Assignment1, Project1, and Final as this is how they appear in the .txt file.
+
+For labs, the deliverables are named Lab1, Lab2, Lab3, Lab4, Lab5, Lab6, Lab7, and Lab8
+
+For assignments, the deliverables are named Assignment1, Assignment2, Assignment3, and Assignment4
+
+For projects, the deliverables are named Project1 and Project2
+
+For the exam, the deliverable is named Final
+
+From here, the program will prompt you to enter a new total grade for that deliverable to replace the existing one.
+
+An example of this using project, Project1, and 200 follows:
+```
+Please input the name of the category! (example: lab/ assignment / project / exam ) project
+
+Input the Grade Name you would like to change. Project1
+
+Input the New Grade. 200
+```
+The changes made will appear on the output file after the program is closed.
+
+
+0
+---------------------
+If you enter 0 when prompted for a choice, you will exit the program
+
+If you make changes, those will be written to the input file once the program is exitted.
+
+An example of the output without changes is below: 
+```
+0
+Program End!
+```
+An example of the output with changes is below: 
+```
+0
+Program End!
+Grades have been written to the file.
+```
