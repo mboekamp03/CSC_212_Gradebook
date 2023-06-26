@@ -67,3 +67,14 @@ Lab7 15
  
 Lab8 20
 ```
+2
+---------------------
+If you enter 2 when prompted for a choice, you will view your current grade.
+
+This is your grade at the moment. So if you only have one assignment and it is 100%, this will output 100.
+
+An eexample of the output is below: 
+```
+2
+Total Grade: 90.5
+```
