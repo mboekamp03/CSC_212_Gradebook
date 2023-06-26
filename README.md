@@ -104,7 +104,7 @@ An example of the output is below:
 ```
 5
 ---------------------
-If you enter 4 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
+If you enter 5 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
 
 The program will then prompt you to enter a deliverable name. These must be formatted like Lab1, Assignment1, Project1, and Final as this is how they appear in the .txt file.
 
@@ -116,8 +116,13 @@ For projects, the deliverables are named Project1 and Project2
 
 For the exam, the deliverable is named Final
 
-An example of the output is below: 
+From here, the program will prompt you to enter a new grade to replace the existing one.
+
+An example of this using labs, Lab1, and 10 follows:
 ```
-1
-77.5
+Please input the name of the category! (example: lab/ assignment / project / exam ) lab
+
+Input the Grade Name you would like to change. Lab1
+
+Input the New Grade. 10
 ```
