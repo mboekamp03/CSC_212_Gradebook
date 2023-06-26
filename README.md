@@ -12,10 +12,10 @@ We met several times throughout the duration of the project to discuss implement
 Instructions
 ---------------------
 To compile our code, use the following command in the terminal:
-```
+```ruby
 g++ main.cpp gradebook.cpp -o program
 ```
 To run the program after compiling, use the following command in the terminal with <file_name> replaced with the name of the file you wish to run: 
-```
+```ruby
 ./program <file_name>.txt 
 ```
