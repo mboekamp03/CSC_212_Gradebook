@@ -71,10 +71,21 @@ Lab8 20
 ---------------------
 If you enter 2 when prompted for a choice, you will view your current grade.
 
-This is your grade at the moment. So if you only have one assignment and it is 100%, this will output 100.
+This is your grade at the moment. So if you only have one assignment grade and it is 100%, this will output 100 as you have 100 of the possible points up to that point.
 
-An eexample of the output is below: 
+An example of the output is below: 
 ```
 2
 Total Grade: 90.5
+```
+3
+---------------------
+If you enter 3 when prompted for a choice, you will view your overall grade.
+
+This is your grade when looking at all the course overall. So if you only have one assignment grade and it is 100%, this will output 5 as you only have 5% of the grades.
+
+An example of the output is below: 
+```
+3
+Overall Grade: 90.5
 ```
