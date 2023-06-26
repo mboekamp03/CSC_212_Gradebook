@@ -21,7 +21,7 @@ To run the program after compiling, use the following command in the terminal wi
 ```
 After running this command in the terminal, you will see the following text appear in it:
 ```
-John Doe
+<student_name>
 Choose a number to view categories or make changes!
 1: View Category
 2: View Total Grade
