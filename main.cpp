@@ -138,7 +138,7 @@ int main(int argc, char*argv[]) {
 
     }
 
-    std::cout << "Program End!";
+    std::cout << "Program End!" << std::endl;
 
     if(changesMade == true) {
         std::ofstream file(fileName, std::ofstream::out | std::ofstream::trunc);
