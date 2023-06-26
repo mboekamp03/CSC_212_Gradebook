@@ -159,7 +159,7 @@ Input the Grade Name you would like to see. Assignment1
 
 7
 ---------------------
-If you enter 57when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
+If you enter 7 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
 
 The program will then prompt you to enter a deliverable name. These must be formatted like Lab1, Assignment1, Project1, and Final as this is how they appear in the .txt file.
 
