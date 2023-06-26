@@ -217,5 +217,5 @@ grade2.txt
 
 grade3.txt
 ---------------------
-
-
+<img width="1920" alt="Screenshot 2023-06-26 at 7 30 52 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/e9961bc3-5edf-4357-8694-d9b3da499857">
+<img width="1920" alt="Screenshot 2023-06-26 at 7 31 05 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/0c39a82e-4513-40a1-aff8-43e6f9bdacad">
