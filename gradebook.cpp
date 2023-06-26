@@ -83,9 +83,15 @@ void Grade::setTotLab(){
         sum = labGrades[i].assignmentGrade + sum;
         totalGrade = totalGrade + labGrades[i].totalGrade;
     }
-    double grade = (sum / totalGrade) * 100;
-    
-    this->totLab = grade;
+
+    if(totalGrade != 0) {
+        double grade = (sum / totalGrade) * 100;
+        // Sets the total exam grade
+        this->totLab = grade;
+    }
+    else {
+        this->totLab = 0;
+    }
 }
 
 //uses private vector to get total Assignment grades using vec.size()
@@ -99,9 +105,14 @@ void Grade::setTotAssignment(){
         totalGrade = totalGrade + assignmentGrades[i].totalGrade;
     }
 
-    double grade = (sum / totalGrade) * 100;
-
-    this->totAssignment = grade;
+    if(totalGrade != 0) {
+        double grade = (sum / totalGrade) * 100;
+        // Sets the total exam grade
+        this->totAssignment = grade;
+    }
+    else {
+        this->totAssignment = 0;
+    }
 }
 
 void Grade::setTotProject(){
@@ -116,9 +127,14 @@ void Grade::setTotProject(){
         totalGrade = totalGrade + projectGrades[i].totalGrade;
     }
     // Calculates   
-    double grade = (sum / totalGrade) * 100;
-    // Sets the total exam grade
-    this->totProject = grade;
+    if(totalGrade != 0) {
+        double grade = (sum / totalGrade) * 100;
+        // Sets the total exam grade
+        this->totProject = grade;
+    }
+    else {
+        this->totProject = 0;
+    }
 }
 
 void Grade::setTotExam(){
@@ -133,9 +149,14 @@ void Grade::setTotExam(){
         totalGrade = totalGrade + examGrades[i].totalGrade;
     }
     // Calculates
-    double grade = (sum / totalGrade) * 100;
-    // Sets the total exam grade
-    this->totExam = grade;
+    if(totalGrade != 0) {
+        double grade = (sum / totalGrade) * 100;
+        // Sets the total exam grade
+        this->totExam = grade;
+    }
+    else {
+        this->totExam = 0;
+    }
 }
 
 void Grade::setStudentName(std::string name){
