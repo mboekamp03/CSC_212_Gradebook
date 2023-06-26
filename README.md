@@ -19,7 +19,7 @@ To run the program after compiling, use the following command in the terminal wi
 ```
 ./program <file_name>.txt 
 ```
-After running this command in the termina, you will see the following text appear in it:
+After running this command in the terminal, you will see the following text appear in it:
 ```
 John Doe
 Choose a number to view categories or make changes!
@@ -32,3 +32,6 @@ Choose a number to view categories or make changes!
 7: Change the Total Grade
 0: To Quit
 ```
+Once this appears, enter the number which corresponds to your desire output.
+
+You 
