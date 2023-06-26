@@ -71,7 +71,6 @@ int main(int argc, char*argv[]) {
                 }
             }
             student.printCategory(ifChoice);
-
         }
 
         else if (choice == 2){
@@ -130,7 +129,12 @@ int main(int argc, char*argv[]) {
             std::cin >> gradeCat;
             std::cout << '\n' << "Input the Grade Name you would like to see. ";
             std::cin >> gradeName;
-            std::cout << student.getIndividualGrade(gradeCat, gradeName) << '\n';
+            if(student.getIndividualGrade(gradeCat, gradeName) == 0) {
+                std::cout << "Deliverable not found." << std::endl;
+            }
+            else {
+                std::cout << student.getIndividualGrade(gradeCat, gradeName) << '\n';
+            }
         }
 
         else if (choice == 7){
@@ -151,6 +155,7 @@ int main(int argc, char*argv[]) {
             changesMade = true;
         }
 
+        std::cout << " " << std::endl;
     }
 
     std::cout << "Program End!" << std::endl;
@@ -161,6 +166,9 @@ int main(int argc, char*argv[]) {
     }
 
     file.close();
+
+    std::cout << " " << std::endl;
+
     return 0;
 }
 
