@@ -34,4 +34,32 @@ Choose a number to view categories or make changes!
 ```
 Once this appears, enter the number which corresponds to your desire output.
 
-You 
+If you enter 1 when prompted for a choice, you will open another menu to choose a category:
+```
+Choose a number to choose a category!
+1: LABS
+2: ASSIGNMENTS
+3: PROJECTS
+4: EXAMS
+```
+From here, You can enter 1 to view lab grades, 2 to view assignment grades, 3 to view project grades, and 4 to view exam grades.
+
+If you choose 1, the terminal will look like the following:
+```
+1
+Lab1 25
+ 
+Lab2 20
+ 
+Lab3 25
+ 
+Lab4 0
+ 
+Lab5 25
+ 
+Lab6 25
+ 
+Lab7 15
+ 
+Lab8 20
+```
