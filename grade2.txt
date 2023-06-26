@@ -1,0 +1,8 @@
+Sahil Chadna
+Lab Lab1 25 25
+Lab Lab2 25 25
+Lab Lab3 15 25
+Lab Lab4 20 25
+Assignment Assignment1 30 50
+Assignment Assignment2 20 50
+Project Project1 125 150
