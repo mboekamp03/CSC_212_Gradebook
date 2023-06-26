@@ -1,0 +1,8 @@
+Matthew Boekamp
+Lab Lab1 25 25
+Lab Lab2 18 25
+Lab Lab3 20 25
+Lab Lab4 12 25
+Assignment Assignment1 50 50
+Assignment Assignment2 35 50
+Project Project1 150 150
