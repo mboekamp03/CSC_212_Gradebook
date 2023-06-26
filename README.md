@@ -206,8 +206,16 @@ Sample Output
 ---------------------
 grade1.txt
 ---------------------
-<img width="1920" alt="Screenshot 2023-06-26 at 7 22 58 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/b5a76517-66d1-4db4-893d-019ca3d939f2">
-<img width="1920" alt="Screenshot 2023-06-26 at 7 23 58 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/bf87e3de-6c57-4a48-b44b-29637bf66ffb">
+<img width="1920" alt="Screenshot 2023-06-26 at 7 47 00 PM 2" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/af2d926c-50e3-4ee9-af74-55aa3c44e3fb">
+<img width="1920" alt="Screenshot 2023-06-26 at 7 47 44 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/648ff30d-07b6-4c39-a016-094dde172b61">
+
+grade1.txt
+
+Before:
+<img width="1920" alt="Screenshot 2023-06-26 at 7 45 34 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/2198611b-a79c-4e1e-bc8a-1b76bc45e5b9">
+
+After:
+<img width="1920" alt="Screenshot 2023-06-26 at 7 47 57 PM (2)" src="https://github.com/mboekamp03/CSC-212-Project/assets/98491428/497f78f0-1046-48e5-934c-10e03ed045ba">
 
 grade2.txt
 ---------------------
