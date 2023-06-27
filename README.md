@@ -99,8 +99,6 @@ If you enter 4 when prompted for a choice, you will open a menu to choose a cate
 
 Once again, You can enter 1 to view lab grades, 2 to view assignment grades, 3 to view project grades, and 4 to view exam grades.
 
-If you choose 1, the terminal will look like the following:
-
 An example of the output is below: 
 ```
 1
