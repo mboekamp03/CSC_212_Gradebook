@@ -147,7 +147,7 @@ For projects, the deliverables are named Project1 and Project2
 
 For the exam, the deliverable is named Final
 
-From here, the program will ouput the grade of that assignment
+From here, the program will output the grade of that assignment
 
 An example of this using assignment and Assignment1 follows:
 ```
