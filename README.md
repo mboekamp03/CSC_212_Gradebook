@@ -85,7 +85,7 @@ Total Grade: 90.5
 ---------------------
 If you enter 3 when prompted for a choice, you will view your overall grade.
 
-This is your grade when looking at all the course overall. So if you only have one assignment grade and it is 100%, this will output 5 as you only have 5% of the grades.
+This is your grade when looking at all the number of points available. So if you only have one assignment grade and it is 100%, this will output 5 as you only have 5% of the grades.
 
 An example of the output is below: 
 ```
