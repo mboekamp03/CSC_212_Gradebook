@@ -37,7 +37,7 @@ Once this appears, enter the number which corresponds to your desired output.
 Instructions for Choices
 ---------------------
 
-1
+Choice 1
 ---------------------
 If you enter 1 when prompted for a choice, you will open another menu to choose a category:
 ```
@@ -69,7 +69,7 @@ Lab7 15
 Lab8 20
 ```
 
-2
+Choice 2
 ---------------------
 If you enter 2 when prompted for a choice, you will view your current grade.
 
@@ -81,7 +81,7 @@ An example of the output is below:
 Total Grade: 90.5
 ```
 
-3
+Choice 3
 ---------------------
 If you enter 3 when prompted for a choice, you will view your overall grade.
 
@@ -93,7 +93,7 @@ An example of the output is below:
 Overall Grade: 90.5
 ```
 
-4
+Choice 4
 ---------------------
 If you enter 4 when prompted for a choice, you will open a menu to choose a category. The menu opened is the same as above and you will be prompted for another choice.
 
@@ -105,7 +105,7 @@ An example of the output is below:
 77.5
 ```
 
-5
+Choice 5
 ---------------------
 If you enter 5 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
 
@@ -131,7 +131,7 @@ Input the New Grade. 10
 ```
 The changes made will appear on the output file after the program is closed.
 
-6
+Choice 6
 ---------------------
 If you enter 6 when prompted for a choice, you will be prompted to select an category. This can be either uppercase or lowercase.
 
@@ -155,7 +155,7 @@ Input the Grade Name you would like to see. Assignment1
 40
 ```
 
-7
+Choice 7
 ---------------------
 If you enter 7 when prompted for a choice, the program will ask for a category. This category can be either uppercase or lowercase (Lab or lab).
 
@@ -182,7 +182,7 @@ Input the New Grade. 200
 The changes made will appear on the output file after the program is closed.
 
 
-0
+Choice 0
 ---------------------
 If you enter 0 when prompted for a choice, you will exit the program.
 
